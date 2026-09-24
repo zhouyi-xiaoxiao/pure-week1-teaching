@@ -1,17 +1,160 @@
-(()=>{'use strict';history.scrollRestoration='manual';const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)];const store='pure-full-library-v1';let items=[],filter='all',selected='',cn=true,size=23;
-try{const p=JSON.parse(localStorage.getItem(store+'-prefs')||'{}');cn=p.cn!==false;size=p.size||23;selected=p.selected||'K1'}catch{}
-const persist=()=>{try{localStorage.setItem(store+'-prefs',JSON.stringify({cn,size,selected}))}catch{}};
-function settings(){document.body.classList.toggle('hide-cn',!cn);$('#cn').textContent='中文 · '+(cn?'开':'关');$('#cn').setAttribute('aria-pressed',String(cn));document.documentElement.style.setProperty('--read-size',size+'px');$('#smaller').disabled=size<=18;$('#larger').disabled=size>=34;persist()}
-$('#cn').onclick=()=>{cn=!cn;settings()};$('#smaller').onclick=()=>{size=Math.max(18,size-2);settings()};$('#larger').onclick=()=>{size=Math.min(34,size+2);settings()};settings();
-const visible=()=>items.filter(x=>(filter==='all'||x.id.startsWith(filter))&&x.search.includes($('#search').value.trim().toLowerCase()));
-function choose(id,scroll=true){const item=items.find(x=>x.id===id);if(!item)return;selected=id;$('#content').innerHTML=item.html;$('#entry-select').value=id;all('#entries button').forEach(b=>{b.classList.toggle('active',b.dataset.id===id);if(b.dataset.id===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});const list=visible(),n=list.findIndex(x=>x.id===id);$('#previous').disabled=n<=0;$('#next-entry').disabled=n<0||n>=list.length-1;const solution=$('.solution');const sync=()=>$('#answer-toggle').textContent=solution.open?'收起答案':'展开答案';solution.addEventListener('toggle',sync);sync();history.replaceState(null,'','#entry='+id);persist();if(scroll)$('#content').scrollIntoView({block:'start'});}
-function nav(){const list=visible();$('#count').textContent=`显示 ${list.length} / ${items.length} 项`;$('#entries').replaceChildren();$('#entry-select').replaceChildren();for(const item of list){const b=document.createElement('button');b.textContent=item.id+' · '+item.title;b.dataset.id=item.id;b.onclick=()=>choose(item.id);$('#entries').append(b);const opt=document.createElement('option');opt.value=item.id;opt.textContent=item.id+' · '+item.title;$('#entry-select').append(opt)}if(!list.length){$('#content').innerHTML='<p>没有匹配的题目；试试题号或更短的关键词。</p>';$('#answer-toggle').disabled=true;$('#previous').disabled=true;$('#next-entry').disabled=true;return}$('#answer-toggle').disabled=false;choose(list.some(x=>x.id===selected)?selected:list[0].id,false)}
-$('#search').oninput=nav;all('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;all('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));nav()});$('#entry-select').onchange=e=>choose(e.target.value);$('#answer-toggle').onclick=()=>{$('.solution').open=!$('.solution').open};$('#previous').onclick=()=>move(-1);$('#next-entry').onclick=()=>move(1);function move(d){const list=visible(),n=list.findIndex(x=>x.id===selected);if(list[n+d])choose(list[n+d].id)}
-const bytes=s=>Uint8Array.from(atob(s.replaceAll('-','+').replaceAll('_','/')),c=>c.charCodeAt(0));
-function readKey(value){value=value.trim();if(value.includes('#'))return new URLSearchParams(value.split('#')[1]).get('key')||'';return value}
-async function unlock(value){const key=readKey(value);$('#unlock-status').textContent='正在打开…';try{const raw=bytes(key);if(raw.length!==32)throw new Error();const cryptokey=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);const response=await fetch('./library-data.json?v=c1');if(!response.ok)throw new Error();const blob=await response.json();const text=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(blob.iv)},cryptokey,bytes(blob.data));items=JSON.parse(new TextDecoder().decode(text));try{localStorage.setItem(store+'-key',key)}catch{}$('#locked').hidden=true;$('#library').hidden=false;$('#access').value='';nav();window.scrollTo(0,0);setupOffline()}catch{$('#unlock-status').textContent='未能打开。请使用完整的个人链接，并在首次打开时保持联网。';$('#locked').hidden=false;$('#library').hidden=true}}
-$('#unlock-form').onsubmit=e=>{e.preventDefault();unlock($('#access').value)};$('#lock').onclick=()=>{try{localStorage.removeItem(store+'-key')}catch{}items=[];$('#content').replaceChildren();$('#entries').replaceChildren();$('#library').hidden=true;$('#locked').hidden=false;$('#unlock-status').textContent='已清除此设备保存的访问权限。重新打开需要个人链接。';history.replaceState(null,'',location.pathname)};
-async function setupOffline(){const badge=$('#offline');try{const reg=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});await reg.update();await navigator.serviceWorker.ready;const update=async()=>{const cached=await caches.match(new URL('./library-data.json?v=c1',location.href));badge.textContent=cached?(navigator.onLine?'完整资料离线已就绪':'完整资料离线可用'):'资料已打开，正在准备离线';if(cached)badge.dataset.ready='true'};await update();navigator.serviceWorker.addEventListener('controllerchange',update);window.addEventListener('offline',update);window.addEventListener('online',update);setTimeout(update,1500)}catch{badge.textContent='资料已打开；此浏览器需联网使用'}}
-window.addEventListener('hashchange',()=>{const params=new URLSearchParams(location.hash.slice(1));if(params.get('key')){if(params.get('entry'))selected=params.get('entry');history.replaceState(null,'',location.pathname+location.search);unlock(params.get('key'))}});
-const params=new URLSearchParams(location.hash.slice(1));const fromUrl=params.get('key');if(params.get('entry'))selected=params.get('entry');if(fromUrl)history.replaceState(null,'',location.pathname+location.search);let saved='';try{saved=localStorage.getItem(store+'-key')||''}catch{}if(fromUrl||saved)unlock(fromUrl||saved);
+(() => {
+  'use strict';
+  history.scrollRestoration = 'manual';
+  const $ = selector => document.querySelector(selector);
+  const all = selector => [...document.querySelectorAll(selector)];
+  const store = 'pure-full-library-v1';
+  const asset = './library-data.json?v=public1';
+  let items = [], filter = 'all', selected = 'K1', cn = true, size = 23;
+  try {
+    const prefs = JSON.parse(localStorage.getItem(store + '-prefs') || '{}');
+    cn = prefs.cn !== false;
+    size = Math.max(18, Math.min(34, Number(prefs.size) || 23));
+    selected = prefs.selected || 'K1';
+    localStorage.removeItem(store + '-key');
+  } catch {}
+  function persist() {
+    try { localStorage.setItem(store + '-prefs', JSON.stringify({cn, size, selected})); } catch {}
+  }
+  function settings() {
+    document.body.classList.toggle('hide-cn', !cn);
+    $('#cn').textContent = '中文 · ' + (cn ? '开' : '关');
+    $('#cn').setAttribute('aria-pressed', String(cn));
+    document.documentElement.style.setProperty('--read-size', size + 'px');
+    $('#smaller').disabled = size <= 18;
+    $('#larger').disabled = size >= 34;
+    persist();
+  }
+  $('#cn').onclick = () => { cn = !cn; settings(); };
+  $('#smaller').onclick = () => { size = Math.max(18, size - 2); settings(); };
+  $('#larger').onclick = () => { size = Math.min(34, size + 2); settings(); };
+  settings();
+  function measureHeader() {
+    document.documentElement.style.setProperty('--header-height', $('header').offsetHeight + 'px');
+    document.documentElement.style.setProperty('--controls-height', $('.reading-controls').offsetHeight + 'px');
+  }
+  new ResizeObserver(measureHeader).observe($('header'));
+  new ResizeObserver(measureHeader).observe($('.reading-controls'));
+  const visible = () => items.filter(item =>
+    (filter === 'all' || item.id.startsWith(filter)) &&
+    item.search.includes($('#search').value.trim().toLowerCase())
+  );
+  function choose(id, scroll = true) {
+    const item = items.find(item => item.id === id);
+    if (!item) return;
+    selected = id;
+    $('#content').innerHTML = item.html;
+    $('#entry-select').value = id;
+    all('#entries button').forEach(button => {
+      const current = button.dataset.id === id;
+      button.classList.toggle('active', current);
+      if (current) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current');
+    });
+    const list = visible(), index = list.findIndex(item => item.id === id);
+    $('#previous').disabled = index <= 0;
+    $('#next-entry').disabled = index < 0 || index >= list.length - 1;
+    $('#previous').textContent = index > 0 ? '← ' + list[index - 1].id : '← 上一项';
+    $('#next-entry').textContent = list[index + 1] ? list[index + 1].id + ' →' : '下一项 →';
+    const solution = $('.solution');
+    const sync = () => { $('#answer-toggle').textContent = solution.open ? '收起答案' : '展开答案'; };
+    solution.addEventListener('toggle', sync); sync();
+    $('#section-jumps').replaceChildren();
+    const headings = [
+      ['overview', '先看目标'], ['question', id.startsWith('K') ? '概念' : '题目'],
+      ['prerequisites', '所需知识'], ['strategy', '怎么想到'], ['solution', '逐步解答'],
+      ['alternatives', '其他例子'], ['say', '英文讲法'], ['pitfalls', '易错点']
+    ];
+    for (const [name, label] of headings) {
+      const section = $('#content .' + name);
+      if (!section) continue;
+      const button = document.createElement('button');
+      button.textContent = label;
+      button.dataset.anchor = name;
+      button.onclick = () => {
+        if (name === 'solution') section.open = true;
+        section.scrollIntoView({block: 'start', behavior: 'instant'});
+      };
+      $('#section-jumps').append(button);
+    }
+    history.replaceState(null, '', '#entry=' + id);
+    persist(); measureHeader();
+    if (scroll) $('#content').scrollIntoView({block: 'start', behavior: 'instant'});
+  }
+  function nav() {
+    const list = visible();
+    $('#count').textContent = `显示 ${list.length} / ${items.length} 项`;
+    $('#entries').replaceChildren(); $('#entry-select').replaceChildren();
+    for (const item of list) {
+      const button = document.createElement('button');
+      const number = document.createElement('strong'); number.textContent = item.id;
+      const title = document.createElement('span'); title.textContent = item.title;
+      button.append(number, title); button.dataset.id = item.id; button.onclick = () => choose(item.id);
+      $('#entries').append(button);
+      const option = document.createElement('option'); option.value = item.id; option.textContent = item.id + ' · ' + item.title;
+      $('#entry-select').append(option);
+    }
+    if (!list.length) {
+      $('#content').innerHTML = '<p class="empty-result">没有匹配的内容。试试题号，或更短的中英文关键词。</p>';
+      $('#section-jumps').replaceChildren();
+      $('#answer-toggle').disabled = true; $('#previous').disabled = true; $('#next-entry').disabled = true;
+      return;
+    }
+    $('#answer-toggle').disabled = false;
+    choose(list.some(item => item.id === selected) ? selected : list[0].id, false);
+  }
+  $('#search').oninput = nav;
+  all('[data-filter]').forEach(button => button.onclick = () => {
+    filter = button.dataset.filter;
+    all('[data-filter]').forEach(item => item.classList.toggle('active', item === button));
+    nav();
+  });
+  $('#entry-select').onchange = event => choose(event.target.value);
+  $('#answer-toggle').onclick = () => { $('.solution').open = !$('.solution').open; };
+  function move(direction) {
+    const list = visible(), index = list.findIndex(item => item.id === selected);
+    if (list[index + direction]) choose(list[index + direction].id);
+  }
+  $('#previous').onclick = () => move(-1);
+  $('#next-entry').onclick = () => move(1);
+  $('#top').onclick = () => $('#content').scrollIntoView({block: 'start', behavior: 'instant'});
+  async function setupOffline() {
+    const badge = $('#offline');
+    try {
+      const registration = await navigator.serviceWorker.register('./sw.js', {updateViaCache: 'none'});
+      await registration.update(); await navigator.serviceWorker.ready;
+      const update = async () => {
+        const cached = await caches.match(new URL(asset, location.href));
+        badge.textContent = cached ? (navigator.onLine ? '完整资料离线已就绪' : '完整资料离线可用') : '资料已打开，正在准备离线';
+        if (cached) badge.dataset.ready = 'true';
+      };
+      await update(); navigator.serviceWorker.addEventListener('controllerchange', update);
+      window.addEventListener('offline', update); window.addEventListener('online', update); setTimeout(update, 1500);
+    } catch { badge.textContent = '资料已打开；此浏览器需联网使用'; }
+  }
+  function readAddress() {
+    const params = new URLSearchParams(location.hash.slice(1));
+    if (params.get('entry')) selected = params.get('entry');
+    if (params.has('key')) history.replaceState(null, '', location.pathname + location.search + '#entry=' + encodeURIComponent(selected));
+  }
+  readAddress();
+  window.addEventListener('hashchange', () => {
+    readAddress();
+    if (items.length) { filter = 'all'; $('#search').value = ''; all('[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all')); nav(); }
+  });
+  async function load() {
+    $('#retry').hidden = true;
+    try {
+      const response = await fetch(asset);
+      if (!response.ok) throw new Error();
+      items = await response.json();
+      if (!Array.isArray(items) || !items.length) throw new Error();
+      $('#load-status').hidden = true; $('#library').hidden = false;
+      nav(); window.scrollTo(0, 0); setupOffline();
+    } catch {
+      $('#load-status p').textContent = '资料暂时未能加载。首次打开请保持联网，然后点“重新加载”。无需账号或访问码。';
+      $('#retry').hidden = false;
+    }
+  }
+  $('#retry').onclick = load;
+  load();
 })();
