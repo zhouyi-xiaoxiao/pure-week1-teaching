@@ -9,15 +9,15 @@
       },
       {
         "type": "action",
-        "text": "课前在黑板留一句：How many different ways can we represent 2 − i? 学生进教室时可先想。开场仍先做概念回顾，再回收这个热身。"
+        "text": "课前在黑板留一句：How many different ways can we represent 2 − i? 学生进教室时可先想。开场用两分钟说明方式，随后先让学生画图，再按卡点回顾概念。"
       },
       {
         "type": "note",
-        "text": "主线：短概念回顾 → A1 同一复数的表示 → A2 向量计算 → A3/A4 两种坐标互换 → A5 复数除法。A6 点积夹角只在学生已学且有时间时做。资料完整不代表本节要全讲完。"
+        "text": "主线：先尝试、按需补概念 → A1 同一复数的表示 → A2 向量计算 → A3/A4 两种坐标互换 → A5 复数除法。A6 点积夹角只在学生已学且有时间时做。资料完整不代表本节要全讲完。"
       },
       {
         "type": "action",
-        "text": "时间：09:00–09:05 开场；09:05–09:09 A1；09:09–09:19 A2；09:19–09:24 A3；09:24–09:32 A4；09:32–09:42 A5；09:42–09:47 A6 可选。09:28 检查理解：若仍卡在分量或角度，取消 A6，并把 A5 限为一道必要练习。09:40 不再开新题，除非主线已稳。09:47 无条件收尾，09:50 结束。"
+        "text": "时间：09:00–09:02 开场；09:02–09:08 A1；09:08–09:18 A2；09:18–09:23 A3；09:23–09:28 A4；09:28–09:40 A5；09:40–09:47 巩固或 A6 可选。09:28 检查理解：若仍卡在分量或角度，取消 A6，并把 A5 限为一道必要练习。09:40 不再开新题，除非主线已稳。09:47 无条件收尾，09:50 结束。"
       },
       {
         "type": "note",
@@ -41,81 +41,44 @@
     }
   },
   {
-    "title": "开场与概念回顾",
-    "subtitle": "09:00–09:05 · 1 分钟介绍 + 3 分钟概念 + 1 分钟检查",
+    "title": "开场：发题、先尝试，再补概念",
+    "subtitle": "09:00–09:02 · 简短说明，不先讲完整答案",
     "blocks": [
       {
         "type": "say",
-        "en": "Hi everyone. I'm Xiaoxiao, your Linear Algebra tutor. We will work on questions together. Please ask questions, and be ready to explain a step rather than just give a number.",
-        "cn": "大家好，我是 Xiaoxiao，是你们的线性代数 tutor。我们一起做题，请随时提问，也准备解释一个步骤，而不只是报答案。"
+        "en": "Today we’ll work on a few problems, compare approaches, and discuss the steps that need care. This is practice, not a test.",
+        "cn": "今天先解几道题、比较方法，再讨论需要注意的步骤。这是练习，不是测验。"
       },
       {
         "type": "say",
-        "en": "Which lecture group are you in, and how far have you got? Have you covered polar coordinates and the dot product yet?",
-        "cn": "你们属于哪个讲座分流班？实际讲到哪里了？极坐标和点积已经学过了吗？"
+        "en": "Have you met polar coordinates and the dot product in lectures yet?",
+        "cn": "讲座已经讲过极坐标和点积了吗？"
       },
       {
         "type": "action",
-        "text": "等 5–8 秒并听一两人回答；不把点头或沉默当作全班已掌握。点积没学则跳过 A6。若极坐标没学，先用图引入，不称为“大家都知道的”。"
-      },
-      {
-        "type": "math",
-        "text": "\\begin{pmatrix}a\\\\b\\end{pmatrix}\\in\\mathbb R^2\\qquad\\longleftrightarrow\\qquad a+bi\\in\\mathbb C,\\quad i^2=-1"
-      },
-      {
-        "type": "say",
-        "en": "A vector in the plane has two components. The first is horizontal, and the second is vertical. We can draw it as an arrow from the origin. A complex number a plus b i corresponds to the same point: a on the real axis, and b on the imaginary axis.",
-        "cn": "平面向量有两个分量：第一个水平，第二个竖直，可画成从原点出发的箭头。复数 a+bi 对应同一点：实轴坐标 a，虚轴坐标 b。"
+        "text": "听一两组回答。先进入 A1 的画图小任务；若多数人连第一步都不会，再用 60–90 秒补定义或示范起步。不要要求完全没学过的学生凭空发现新方法。"
       },
       {
         "type": "note",
-        "text": "这里建立平面上的对应，不说复数乘法就是向量逐分量相乘。虚部是实数 b，不是 bi。向量可平移画出，但本节用从原点出发的表示最方便。"
-      },
-      {
-        "type": "math",
-        "text": "\\begin{pmatrix}a\\\\b\\end{pmatrix}+\\begin{pmatrix}c\\\\d\\end{pmatrix}=\\begin{pmatrix}a+c\\\\b+d\\end{pmatrix},\\qquad t\\begin{pmatrix}a\\\\b\\end{pmatrix}=\\begin{pmatrix}ta\\\\tb\\end{pmatrix}"
-      },
-      {
-        "type": "say",
-        "en": "We add matching components. Multiplying by a real scalar multiplies both components. We can describe a nonzero arrow in another way too: by its length and its direction. That will connect our coordinate questions.",
-        "cn": "向量相加对应分量分别相加；乘实数时两个分量都乘。非零箭头也能由长度和方向描述，这就连接到后面的坐标题。"
-      },
-      {
-        "type": "say",
-        "en": "For three minus two i, what are the horizontal and vertical coordinates? Where would the point sit?",
-        "cn": "对于 3−2i，水平和竖直坐标各是多少？点在哪里？"
-      },
-      {
-        "type": "action",
-        "text": "停 5–8 秒，请学生说坐标并用手示意位置，再核对。这里只做简短检查，不提前完整讲解 2−i 的热身。"
-      },
-      {
-        "type": "answer",
-        "en": "The coordinates are three and minus two, so it is to the right and below the origin. Its imaginary part is minus two, not minus two i.",
-        "cn": "坐标是 (3,−2)，在原点右下方。虚部是 −2，不是 −2i。"
-      },
-      {
-        "type": "say",
-        "en": "Let's use those ideas on the warm-up you saw as you came in.",
-        "cn": "用这些概念来看大家进门时看到的热身。"
+        "text": "全课采用短循环：独立尝试 → 两人比较 → tutor 追问/短讲解 → 独立小检查。网页中的板书图是教师参考，等学生尝试后再展开或照画。"
       }
     ],
     "quick": {
       "say": {
-        "en": "Hi everyone, I'm Xiaoxiao. Which lecture group are you in, and how far have you got? A plane vector has horizontal and vertical components. The complex number a plus b i corresponds to the point with coordinates a and b. We add matching components; real scaling changes both.",
-        "cn": "先确认讲座分流和实际进度；回顾平面向量两个分量、复数与平面点的对应、按分量相加和数乘。"
+        "en": "We’ll start with a short attempt, then compare ideas. Please show your working, even if you do not finish.",
+        "cn": "先尝试，再比较思路。没做完也留下过程。"
       },
-      "action": "介绍控制 1 分钟；3 分钟指板书回顾；最后问 CHECK，等待后核对。没学点积就取消 A6。",
+      "action": "发学生英文题纸；确认已学内容。两分钟内进入 A1。概念按学生实际卡点补。",
       "check": {
-        "en": "Where would you plot three minus two i? What is its imaginary part?",
-        "cn": "坐标 (3,−2)，右下方；虚部 −2。若混淆，先画带正方向的两条轴。"
+        "en": "Have you met polar coordinates and the dot product in lectures yet?",
+        "cn": "讲座是否已经涉及极坐标和点积？"
       }
     },
     "topic": "K1"
   },
   {
     "title": "A1 热身：同一个数的不同表示",
-    "subtitle": "09:05–09:09 · 先画图，再谈长度和角度",
+    "subtitle": "09:02–09:08 · 独立画图 → 两人比较 → 按卡点补概念",
     "blocks": [
       {
         "type": "say",
@@ -170,11 +133,28 @@
         "cn": "正锐角给正虚部，但原数虚部为负；点必须在第四象限。"
       }
     },
-    "topic": "A1"
+    "topic": "A1",
+    "boardGuide": {
+      "diagram": "diagrams/complex-2-minus-i.svg",
+      "steps": [
+        {
+          "en": "Draw horizontal Re and vertical Im axes. Mark 2 on Re and −1 on Im; plot their intersection.",
+          "zh": "先画 Re 横轴、Im 纵轴；标出 2 和 −1，再画交点。"
+        },
+        {
+          "en": "Join the origin to the point. Add dashed projections and label the length √5 only after students calculate it.",
+          "zh": "连原点到该点；画虚线投影。学生算完后才标长度 √5。"
+        },
+        {
+          "en": "Mark the short clockwise angle −arctan(1/2). If an angle in [0,2π) is required, write 2π−arctan(1/2).",
+          "zh": "先标顺时针负角；若要求 [0,2π)，再写等价正角。不要一开始抄满答案。"
+        }
+      ]
+    }
   },
   {
     "title": "A2 向量计算：先算分量，再解方程",
-    "subtitle": "09:09–09:19 · 两人或三人一组",
+    "subtitle": "09:08–09:18 · 独立起步，再两人或三人讨论",
     "blocks": [
       {
         "type": "say",
@@ -242,11 +222,28 @@
         "cn": "两边均为 (−3/2,−1)，验证成立；若不相等，先查负号。"
       }
     },
-    "topic": "A2"
+    "topic": "A2",
+    "boardGuide": {
+      "diagram": "diagrams/vector-midpoint.svg",
+      "steps": [
+        {
+          "en": "For the first calculation, write v+w=(2,0), then x=(12,0)−(4,0)=(8,0). Keep this separate from the midpoint sketch.",
+          "zh": "先在左边算第一问；不要把 x 的计算混进右侧中点图。"
+        },
+        {
+          "en": "For the second equation, plot U=(4,0) and W=(1,−2). Ask where Y must lie so that U→Y and Y→W are equal.",
+          "zh": "第二问先画 U 和 W，问哪一点 Y 会使 U→Y 与 Y→W 相等。"
+        },
+        {
+          "en": "Add Y at the midpoint. Label U→Y as y−u and Y→W as w−y, then write 2y=u+w.",
+          "zh": "再标中点 Y；两段箭头方向一致，分别标 y−u 与 w−y，最后写 2y=u+w。"
+        }
+      ]
+    }
   },
   {
     "title": "A3 极坐标到直角坐标",
-    "subtitle": "09:19–09:24 · 长度乘单位方向",
+    "subtitle": "09:18–09:23 · 先画方向与长度，再算分量",
     "blocks": [
       {
         "type": "say",
@@ -300,11 +297,28 @@
         "cn": "平方和 25，所以长度 5；两分量正且相等，对应第一象限 45°。"
       }
     },
-    "topic": "A3"
+    "topic": "A3",
+    "boardGuide": {
+      "diagram": "diagrams/polar-components.svg",
+      "steps": [
+        {
+          "en": "Draw axes and a ray at π/4 in the first quadrant. Mark a length of 5 along the ray.",
+          "zh": "先画第一象限 π/4 的射线，再标长度 5。"
+        },
+        {
+          "en": "Drop perpendicular dashed lines to the axes; ask which component uses cosine and which uses sine.",
+          "zh": "向两轴画垂直虚线，问横、纵分量分别用什么。"
+        },
+        {
+          "en": "Write x=5 cos(π/4), y=5 sin(π/4), then label both 5/√2. Check the length is 5.",
+          "zh": "先写投影公式，学生算后再标两分量 5/√2；核对长度 5。"
+        }
+      ]
+    }
   },
   {
     "title": "A4 直角坐标到极坐标",
-    "subtitle": "09:24–09:32 · 先画象限与轴，再选角度",
+    "subtitle": "09:23–09:28 · 画两幅图，比较角度约定",
     "blocks": [
       {
         "type": "say",
@@ -345,7 +359,7 @@
       },
       {
         "type": "action",
-        "text": "09:28 检查：若有人把方向和负长度混在一起，再用第二幅图巩固，取消 A6。09:32 转 A5；如不得不晚一点，缩短讨论而不是取消最后总结。"
+        "text": "09:28 检查：若有人把方向和负长度混在一起，再用第二幅图巩固，取消 A6。09:28 转 A5；如不得不晚一点，缩短讨论而不是取消最后总结。"
       },
       {
         "type": "backup",
@@ -364,11 +378,28 @@
         "cn": "虽可配合另一角得到同一向量，但违反题目 λ>0；长度必须为正。"
       }
     },
-    "topic": "A4"
+    "topic": "A4",
+    "boardGuide": {
+      "diagram": "diagrams/polar-axis-vectors.svg",
+      "steps": [
+        {
+          "en": "Use two sketches. Draw (3,0) to the right and (0,−3) downwards, both from the origin.",
+          "zh": "左右两幅图，均从原点画箭头：向右与向下。"
+        },
+        {
+          "en": "Keep the radius positive. Start angles at the positive horizontal axis.",
+          "zh": "半径保持正值；角度从正横轴开始量。"
+        },
+        {
+          "en": "For the downward vector, trace an anticlockwise three-quarter turn and mark 3π/2. Explain why −π/2 is excluded by this question.",
+          "zh": "向下的图画逆时针 3/4 圈，标 3π/2；解释 −π/2 虽同方向却不在本题区间内。"
+        }
+      ]
+    }
   },
   {
     "title": "A5 复数除法：为什么乘共轭",
-    "subtitle": "09:32–09:42 · 先简化分子，再处理分母",
+    "subtitle": "09:28–09:40 · 先尝试，重点讲共轭与上下同乘",
     "blocks": [
       {
         "type": "say",
@@ -431,7 +462,7 @@
       },
       {
         "type": "action",
-        "text": "09:40：若仍在解释此题，不开 A6。请学生用一句话说“为什么乘共轭”，再用乘回检查收束。09:42 若全部已稳且讲座已学点积，才进入可选 A6；否则让学生再解释这题或提一个问题。"
+        "text": "09:40：若仍在解释此题，不开 A6。请学生用一句话说“为什么乘共轭”，再用乘回检查收束。09:40 若全部已稳且讲座已学点积，才进入可选 A6；否则让学生再解释这题或提一个问题。"
       }
     ],
     "quick": {
@@ -445,15 +476,36 @@
         "cn": "因为 (1+i)(1−i)=2，还必须除以 2；正确结果 13/2−(13/2)i。"
       }
     },
-    "topic": "A5"
+    "topic": "A5",
+    "boardGuide": {
+      "diagram": "diagrams/complex-conjugate.svg",
+      "steps": [
+        {
+          "en": "Draw 1+i and 1−i reflected in the real axis. This picture explains conjugation, not the full division algorithm.",
+          "zh": "画 1+i 与 1−i 关于实轴对称；这幅图解释共轭，不把图当完整除法证明。"
+        },
+        {
+          "en": "On a separate line simplify the numerator: (3+2i)(3−2i)=13.",
+          "zh": "另起一行先把分子化为 13。"
+        },
+        {
+          "en": "Write a bracket around BOTH numerator and denominator being multiplied by 1−i. Then show the denominator is 2.",
+          "zh": "分子、分母旁同时标乘 (1−i)，强调两者都乘；再写分母为 2。"
+        },
+        {
+          "en": "Finish with 13/2−(13/2)i and check by multiplying by 1+i.",
+          "zh": "最后整理实部与虚部，再乘回 1+i 检验。"
+        }
+      ]
+    }
   },
   {
     "title": "A6 可选：点积与夹角",
-    "subtitle": "09:42–09:47 · 只有已学且主线稳定时才做",
+    "subtitle": "09:40–09:47 · 可选；否则修正前题并做独立检查",
     "blocks": [
       {
         "type": "note",
-        "text": "本环节随时可跳过。若学生讲座未覆盖点积/夹角公式，或已经过 09:42 且主线未稳，不临时塞一段新课。"
+        "text": "本环节随时可跳过。若学生讲座未覆盖点积/夹角公式，或已经过 09:40 且主线未稳，不临时塞一段新课。"
       },
       {
         "type": "say",
@@ -502,7 +554,24 @@
         "cn": "不可以，余弦必须在 [−1,1]；缺少除以两模乘积 10√5。"
       }
     },
-    "topic": "A6"
+    "topic": "A6",
+    "boardGuide": {
+      "diagram": "diagrams/dot-angle-directions.svg",
+      "steps": [
+        {
+          "en": "Only use this if students have met the dot product. Draw both directions from the same origin.",
+          "zh": "仅在已经学过点积时使用；两方向从同一原点画。"
+        },
+        {
+          "en": "These arrows are unit directions, not the original vector lengths. Mark the smaller angle between them.",
+          "zh": "图中是单位方向，不代表原向量长度。标两方向之间的较小夹角。"
+        },
+        {
+          "en": "Calculate with the original vectors: a·b=−10, norms √5 and 10. Hence cos φ=−1/√5.",
+          "zh": "计算时仍用原向量：点积 −10，长度 √5 与 10；得 cos φ=−1/√5。"
+        }
+      ]
+    }
   },
   {
     "title": "总结、作业与准时下课",

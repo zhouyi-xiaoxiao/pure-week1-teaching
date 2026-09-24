@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build-lessons.mjs",
     "new:lesson": "node scripts/new-lesson.mjs",
-    "cache": "node scripts/update-cache.mjs"
+    "cache": "node scripts/update-cache.mjs",
+    "print:html": "node scripts/build-print-pack.mjs"
   }
 }

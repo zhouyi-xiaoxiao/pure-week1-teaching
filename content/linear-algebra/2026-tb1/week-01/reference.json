@@ -758,7 +758,8 @@
         "en": "Coordinate method: write $\\mathbf y=(a,b)$. Then $1-a=a-4$ and $-2-b=b$, giving $a=5/2$, $b=-1$. This is equivalent to vector rearrangement.",
         "zh": "分量法：令 $\\mathbf y=(a,b)$，则 $1-a=a-4$、$-2-b=b$，得到 $a=5/2$、$b=-1$。与向量整体移项完全等价。"
       }
-    ]
+    ],
+    "diagram": "diagrams/vector-midpoint.svg"
   },
   {
     "id": "A3",
@@ -806,7 +807,8 @@
         "en": "$(5,5)$ has length $5\\sqrt2$, not $5$. Scaling a unit vector avoids that error.",
         "zh": "$(5,5)$ 的长度是 $5\\sqrt2$，不是 $5$。从单位向量出发做数乘，可以避免这个错误。"
       }
-    ]
+    ],
+    "diagram": "diagrams/polar-components.svg"
   },
   {
     "id": "A4",
@@ -862,7 +864,8 @@
         "en": "Do not attempt division by the horizontal coordinate for the vertical-axis case.",
         "zh": "竖直轴上的点横坐标为零，不要试图通过除以横坐标来求角。"
       }
-    ]
+    ],
+    "diagram": "diagrams/polar-axis-vectors.svg"
   },
   {
     "id": "A5",
@@ -924,7 +927,8 @@
         "en": "Set the quotient equal to $a+bi$. Then $(a+bi)(1+i)=(a-b)+(a+b)i=13$, so $a-b=13$ and $a+b=0$. Solve to get $a=13/2$, $b=-13/2$.",
         "zh": "也可以设商为 $a+bi$。则 $(a+bi)(1+i)=(a-b)+(a+b)i=13$，所以 $a-b=13$、$a+b=0$。联立得到 $a=13/2$、$b=-13/2$。"
       }
-    ]
+    ],
+    "diagram": "diagrams/complex-conjugate.svg"
   },
   {
     "id": "A6",
@@ -980,7 +984,8 @@
         "en": "The denominator is the product of lengths, not their sum and not the product of their squares.",
         "zh": "分母是两个长度的乘积，不是和，也不是平方后的乘积。"
       }
-    ]
+    ],
+    "diagram": "diagrams/dot-angle-directions.svg"
   },
   {
     "id": "C1",
@@ -1820,8 +1825,8 @@
     ],
     "strategy": [
       {
-        "en": "Start with five minutes of essential concepts, then warm up with representations of $2-i$. Give pairs time to work before inviting an explanation.",
-        "zh": "先用约五分钟回顾必要概念，再以 $2-i$ 的不同表示热身。先让两人讨论动笔，再邀请解释。"
+        "en": "Start with a short setup, then let students attempt a sketch of $2-i$. Review essential concepts in response to their work, before inviting explanations.",
+        "zh": "简短说明后，先让学生尝试画出 $2-i$。根据他们的卡点补必要概念，再请学生解释。"
       },
       {
         "en": "Use A2–A5 as the main path; A6 is optional. Start the closing at 09:47 in the proposed 09:00 session plan. Do not rush through all Q1.2–Q1.13.",

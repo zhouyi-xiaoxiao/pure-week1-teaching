@@ -55,7 +55,7 @@
               ],
               "status": "ready",
               "date": "2026-09-25",
-              "script": "courses/linear-algebra/2026-tb1/week-01/index.html",
+              "script": "courses/linear-algebra/2026-tb1/week-01/index.html?v=boards1",
               "reference": "courses/linear-algebra/2026-tb1/week-01/library.html",
               "durationMinutes": 50
             }

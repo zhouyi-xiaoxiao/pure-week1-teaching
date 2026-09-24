@@ -9,8 +9,9 @@
   "durationMinutes": 50,
   "closingIndex": 8,
   "closingHint": "09:47 收尾，09:50 结束；剩余题留作练习。",
-  "flow": "概念 → 2−i → 向量 → 极坐标 → 复数；点积备用",
+  "flow": "先尝试 → 比较 → 按需补概念 → 针对性讲解 → 再检查",
   "notice": "这是含完整答案的教师备课版，不是学生投屏版。K 为前提知识；A1–A6 为本网站给教师活动编的编号；B2–B13 对应正式题单 Q1.2–Q1.13；C1 对应待交 Q1.1，本周课堂只给起步提示。资料完整不等于一小时全部讲完。",
   "sourceSummary": "根据 2026 教师活动建议第 1–4 页、Problem Sheet 1 及 9 月 24 日 Blackboard 核对；详细展开与额外讲法为备课补充，不冒称官方答案原文。",
-  "publication": "approved"
+  "publication": "approved",
+  "printPack": true
 }
