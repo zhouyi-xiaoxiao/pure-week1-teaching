@@ -9,7 +9,7 @@
   try {
     const prefs = JSON.parse(localStorage.getItem(store + '-prefs') || '{}');
     cn = prefs.cn !== false;
-    size = Math.max(18, Math.min(34, Number(prefs.size) || 23));
+    size = Math.max(14, Math.min(34, Number(prefs.size) || 23));
     selected = prefs.selected || 'K1';
     localStorage.removeItem(store + '-key');
   } catch {}
@@ -21,13 +21,16 @@
     $('#cn').textContent = '中文 · ' + (cn ? '开' : '关');
     $('#cn').setAttribute('aria-pressed', String(cn));
     document.documentElement.style.setProperty('--read-size', size + 'px');
-    $('#smaller').disabled = size <= 18;
+    $('#font-size').textContent = size + 'px';
+    $('#font-status').textContent = size >= 34 ? '正文 34px：已达到最大字号，A＋暂不可用。可点 A− 缩小，或点“默认”恢复 23px。' : size <= 14 ? '正文 14px：已达到最小字号，A−暂不可用。可点 A＋放大，或点“默认”恢复 23px。' : '正文 ' + size + 'px；A− 缩小，A＋ 放大；“默认”恢复 23px。';
+    $('#smaller').disabled = size <= 14;
     $('#larger').disabled = size >= 34;
     persist();
   }
   $('#cn').onclick = () => { cn = !cn; settings(); };
-  $('#smaller').onclick = () => { size = Math.max(18, size - 2); settings(); };
+  $('#smaller').onclick = () => { size = Math.max(14, size - 2); settings(); };
   $('#larger').onclick = () => { size = Math.min(34, size + 2); settings(); };
+  $('#font-reset').onclick = () => { size = 23; settings(); };
   settings();
   function measureHeader() {
     document.documentElement.style.setProperty('--header-height', $('header').offsetHeight + 'px');

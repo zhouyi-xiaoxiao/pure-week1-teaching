@@ -4,11 +4,11 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#132c46">
 <title>Pure Week 1 · 完整备课资料</title>
-<link rel="icon" href="icon.svg"><link rel="stylesheet" href="vendor/katex/katex.min.css"><link rel="stylesheet" href="library.css?v=public2">
+<link rel="icon" href="icon.svg"><link rel="stylesheet" href="vendor/katex/katex.min.css"><link rel="stylesheet" href="library.css?v=font1">
 </head>
 <body>
 <a class="skip-link" href="#content">跳到正文 / Skip to content</a>
-<header><a href="./" class="brand">∈ PURE / WEEK 01</a><div class="tools"><button id="cn" aria-pressed="true">中文 · 开</button><button id="smaller" aria-label="缩小字号">A−</button><button id="larger" aria-label="增大字号">A＋</button><a href="./">返回授课稿</a></div></header>
+<header><a href="./" class="brand">∈ PURE / WEEK 01</a><div class="tools"><button id="cn" aria-pressed="true">中文 · 开</button><span class="font-controls" role="group" aria-label="阅读字号"><button id="smaller" type="button" aria-label="缩小字号" aria-controls="content">A−</button><output id="font-size" aria-label="当前字号">23px</output><button id="larger" type="button" aria-label="增大字号" aria-controls="content">A＋</button><button id="font-reset" type="button" aria-label="恢复默认字号">默认</button></span><a href="./">返回授课稿</a></div></header>
 <div class="notice"><strong>完整备课资料 · 无需登录或访问码</strong><p>建议先看“这题在问什么”，再看思路和逐步解答。本次课堂主线：A1 → A3 → A4；A7 备用。资料完整，不代表要在一小时内全部讲完。</p><p>依据课程材料整理；解释与展开推导为备课补充，B7、C1 的解答非官方发布。</p><span id="offline" role="status">正在加载资料</span></div>
 <div id="load-status" role="status" class="loading"><p>正在打开完整资料…</p><button id="retry" hidden>重新加载</button></div>
 <noscript><div class="loading">此交互阅读页需要启用 JavaScript；无需账号或访问码。</div></noscript>
@@ -16,11 +16,11 @@
 <div class="layout">
 <aside class="index"><label for="search">搜索题号 / 术语 / 中英文</label><input id="search" type="search" placeholder="例如 A3、subset、量词"><div class="filters" aria-label="资料分类"><button data-filter="all" class="active">全部</button><button data-filter="K">前置知识</button><button data-filter="A">Part A</button><button data-filter="B">Part B</button><button data-filter="C">Part C</button><button data-filter="T">错误证明</button></div><p id="count" role="status"></p><nav id="entries" aria-label="题目目录"></nav></aside>
 <main>
-<div class="reading-controls"><div class="jump"><label for="entry-select">快速跳题</label><select id="entry-select"></select><button id="answer-toggle">收起答案</button></div><nav id="section-jumps" aria-label="本题阅读导航"></nav></div>
+<div class="reading-controls"><div class="jump"><label for="entry-select">快速跳题</label><select id="entry-select"></select><button id="answer-toggle">收起答案</button></div><p id="font-status" role="status" aria-live="polite">正文 23px；A− 缩小，A＋ 放大。</p><nav id="section-jumps" aria-label="本题阅读导航"></nav></div>
 <div id="content" tabindex="-1"></div>
 </main>
 </div>
 <footer class="pager"><button id="previous">← 上一项</button><button id="top">↑ 本题顶部</button><button id="next-entry">下一项 →</button></footer>
 </div>
-<script src="library.js?v=public2"></script>
+<script src="library.js?v=font1"></script>
 </body></html>
