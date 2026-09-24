@@ -8,6 +8,10 @@
         "text": "教师自用：计划 09:00–09:50。英文可直接说；中文是备课解释和动作提示，不需读出。A1–A6 是本站给教师活动编的导航编号，不是原 Problem Sheet 的题号。"
       },
       {
+        "type": "note",
+        "text": "来源分三层：A1–A6 来自导师《Linear Algebra tutorial ideas 2026》第 2–3 页，不是从正式 13 题直接摘取；B2–B13 才对应 Q1.2–Q1.13，C1 对应 Q1.1。前提概念、详细推导、板书图与 exit check 是本网站的备课补充。页面上方“题目从哪里来”可逐项核对。"
+      },
+      {
         "type": "action",
         "text": "课前在黑板留一句：How many different ways can we represent 2 − i? 学生进教室时可先想。开场用两分钟说明方式，随后先让学生画图，再按卡点回顾概念。"
       },
@@ -26,6 +30,10 @@
       {
         "type": "note",
         "text": "本周 hand-in 的完整解答只供教师备课，本节不要逐步讲完；可给入手提示。已核对本周 Blackboard：Numbas Quiz 1 与 hand-in Q1.1 均于 2026 年 9 月 30 日星期三中午 12 点截止。Quiz 计分、可多次尝试且取最高分；hand-in 不计入总评，用于反馈。"
+      },
+      {
+        "type": "note",
+        "text": "导师要求第一节说明参与方式、联系渠道和反馈安排。可按学校邮件中的真实地址告诉学生如何联系你；反馈目标是提交后一周内，不编造 office hour。导师建议允许学生选正式题或讨论 Q1.13；这不是额外必讲内容。"
       }
     ],
     "quick": {
@@ -53,6 +61,16 @@
         "type": "say",
         "en": "Have you met polar coordinates and the dot product in lectures yet?",
         "cn": "讲座已经讲过极坐标和点积了吗？"
+      },
+      {
+        "type": "say",
+        "en": "Please ask questions and explain your thinking, even if you are unsure. Your homework does not have to be perfect: write down where you get stuck so that the feedback can help you.",
+        "cn": "请提问、解释思路，不确定也可以说。作业不必完美：写下卡住的位置，反馈才更有帮助。"
+      },
+      {
+        "type": "say",
+        "en": "The feedback target for submitted homework is within a week. Please write down any specific question you would like the feedback to address.",
+        "cn": "提交作业的反馈目标是在一周内。希望反馈特别回应的问题，可以写在作业上。"
       },
       {
         "type": "action",
@@ -579,12 +597,17 @@
     "blocks": [
       {
         "type": "say",
-        "en": "Before we finish, tell your partner one check you can use next time. For example, check vector components, use a sketch to choose an angle, or multiply a complex quotient back by its denominator.",
-        "cn": "结束前，跟同伴说一个下次可以用的检查方法：检查分量、用图选角，或把复数商乘回分母。"
+        "en": "Before we finish, try the exit check on your own. Write the vector (0, minus 2) in polar form, with a positive length and an angle in the interval from zero inclusive to two pi exclusive. Make a quick sketch to check your answer.",
+        "cn": "结束前独立完成题纸最后的小检查：把 (0,−2) 写成极坐标，长度为正，角度在 [0,2π)。画个小图检查。"
       },
       {
         "type": "action",
-        "text": "给 20–30 秒，然后听两人各说一句。不要重新从头演算所有答案。若 A6 没做，不把点积列成今天已掌握的内容。"
+        "text": "给 30–45 秒独立写，不先公布答案。若今天未讲极坐标，改为只画向下长度为 2 的向量；用图与长度检查，跳过角度要求。"
+      },
+      {
+        "type": "answer",
+        "en": "The length is two, and the angle is three pi over two. Pi over two points upwards, so it would give the wrong sign. This is why a sketch is useful.",
+        "cn": "长度是 2，角度是 3π/2。π/2 指向上方，符号不对，所以草图能帮助检查。"
       },
       {
         "type": "say",
@@ -617,13 +640,13 @@
     ],
     "quick": {
       "say": {
-        "en": "Choose one check you will use next time. Numbas Quiz One and the hand-in are due on Wednesday, the thirtieth of September, at twelve noon. The quiz counts towards your grade; the hand-in is for feedback. Submit your attempt and mark what is unclear. Thank you; we will finish here.",
-        "cn": "回收一个检查方法；提醒 Numbas Quiz 1 与 hand-in 都是 9 月 30 日星期三中午 12 点截止。Quiz 计分，hand-in 用于反馈，不完美也提交并标注疑问；准时结束。"
+        "en": "On your own, write the vector (0, minus 2) in polar form, using a positive length and an angle from zero inclusive to two pi exclusive. Sketch it and check the signs. Quiz One and the hand-in are due on Wednesday at twelve noon. The quiz counts towards your grade; the hand-in is for feedback. Submit your attempt even if it is incomplete. Thank you; we will finish here.",
+        "cn": "独立把 (0,−2) 写成极坐标：长度为正、角度在 [0,2π)。先画图，再查符号。 提醒周三中午 12 点截止；Quiz 计分，hand-in 用于反馈，不计总评；可以提交不完整尝试。准时下课。"
       },
-      "action": "09:47 开始，20–30 秒同伴交流，听两句；提醒已核实截止时间；仅给 hand-in 起步提示；09:50 结束。",
+      "action": "09:47 无条件收尾。先独立写 30–45 秒，再请一人解释；核对后提醒 9 月 30 日中午截止，09:50 下课。",
       "check": {
-        "en": "What would you check first if your polar answer pointed into the wrong quadrant?",
-        "cn": "先对照坐标正负与草图，再检查角度/象限，不盲目相信反正切计算器。"
+        "en": "The length is 2 and the angle is three pi over two. Why does pi over two point the wrong way? If polar coordinates were not covered today, give only the endpoint, sketch and length.",
+        "cn": "λ=2，θ=3π/2；π/2 指向上方而不是下方。若本节没讲极坐标，只检查终点、图和长度，不临时增加新知识。"
       }
     },
     "topic": "T1"
@@ -670,6 +693,19 @@
         "type": "backup",
         "en": "We have time for one more check, not a whole new topic. Let us make sure this idea is clear, then finish on time.",
         "cn": "时间只够再检查一点，不够开新主题。先把这个概念弄清，再准时结束。"
+      },
+      {
+        "type": "note",
+        "text": "学得很快时可改用正式 Q1.13（完整资料 B13），替换重复计算而非延长下课时间。先确认已学过三角不等式的证明；不要把 Q1.13 与待交 Q1.1 混淆。"
+      },
+      {
+        "type": "backup",
+        "en": "If these calculations are familiar, look at Question 1.13 on the problem sheet. Which dot-product properties justify the first expansion? Why does Cauchy–Schwarz give an upper bound even when the dot product is negative? Why may we take square roots at the end?",
+        "cn": "如果这些计算已熟悉，看正式 Q1.13：开头展开用了哪些点积性质？点积为负时，柯西–施瓦茨为何仍给出上界？最后为何可以开平方？"
+      },
+      {
+        "type": "note",
+        "text": "教师核对：展开用分配律（双线性）和对称性；v·w ≤ |v·w| ≤ ‖v‖‖w‖；最后两边非负，平方根在非负数上保序。让学生说出理由，不只念公式。"
       }
     ],
     "quick": {

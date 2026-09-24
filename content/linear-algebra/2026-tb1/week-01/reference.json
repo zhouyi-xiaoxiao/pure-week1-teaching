@@ -627,7 +627,7 @@
     "id": "A1",
     "title": "Warm-up: representing 2 − i · 热身：同一复数的不同表示",
     "scope": "课堂热身",
-    "source": "Week 1 tutorial activities; A numbers are website activity labels, not problem-sheet numbers. Worked explanations are independently expanded tutor preparation.",
+    "source": "原题来源 / Question source: Linear Algebra tutorial ideas 2026, p. 2, Week 1, Warm-up · 2 − i 的不同表示. A1–A6 are local activity labels, NOT Problem Sheet 1 question numbers. 知识联系（非原题对应）：Q1.6：极坐标与方向；这里用的是复数示例，不是 Q1.6 原题。 Worked explanations, diagrams and checks are independently expanded tutor preparation.",
     "questionEn": "How many different ways can we represent the complex number $2-i$?",
     "questionZh": "复数 $2-i$ 可以用多少种不同方式表示？",
     "overview": {
@@ -702,7 +702,7 @@
     "id": "A2",
     "title": "Vector calculations and a midpoint · 向量运算与中点",
     "scope": "课堂核心",
-    "source": "Week 1 tutorial activities; A numbers are website activity labels, not problem-sheet numbers. Worked explanations are independently expanded tutor preparation.",
+    "source": "原题来源 / Question source: Linear Algebra tutorial ideas 2026, p. 2, Week 1, Questions · 第 1 项：向量计算. A1–A6 are local activity labels, NOT Problem Sheet 1 question numbers. 知识联系（非原题对应）：Q1.2：向量、坐标与图示的基础；正式题没有这组 x、y 方程。 Worked explanations, diagrams and checks are independently expanded tutor preparation.",
     "questionEn": "Let $\\mathbf u=\\begin{pmatrix}4\\\\0\\end{pmatrix}$, $\\mathbf v=\\begin{pmatrix}1\\\\2\\end{pmatrix}$, $\\mathbf w=\\begin{pmatrix}1\\\\-2\\end{pmatrix}$. Find $\\mathbf x,\\mathbf y\\in\\mathbb R^2$ where $\\mathbf x=3\\mathbf u-2(\\mathbf v+\\mathbf w)$ and $\\mathbf w-\\mathbf y=\\mathbf y-\\mathbf u$.",
     "questionZh": "设 $\\mathbf u=\\begin{pmatrix}4\\\\0\\end{pmatrix}$、$\\mathbf v=\\begin{pmatrix}1\\\\2\\end{pmatrix}$、$\\mathbf w=\\begin{pmatrix}1\\\\-2\\end{pmatrix}$。求 $\\mathbf x,\\mathbf y\\in\\mathbb R^2$，使 $\\mathbf x=3\\mathbf u-2(\\mathbf v+\\mathbf w)$ 且 $\\mathbf w-\\mathbf y=\\mathbf y-\\mathbf u$。",
     "overview": {
@@ -765,7 +765,7 @@
     "id": "A3",
     "title": "Polar to Cartesian · 极坐标转直角坐标",
     "scope": "课堂核心",
-    "source": "Week 1 tutorial activities; A numbers are website activity labels, not problem-sheet numbers. Worked explanations are independently expanded tutor preparation.",
+    "source": "原题来源 / Question source: Linear Algebra tutorial ideas 2026, p. 2, Week 1, Questions · 第 2 项：λ = 5，θ = π/4. A1–A6 are local activity labels, NOT Problem Sheet 1 question numbers. 知识联系（非原题对应）：Q1.6：极坐标表示的入门计算；不是原题的证明要求。 Worked explanations, diagrams and checks are independently expanded tutor preparation.",
     "questionEn": "Find $\\mathbf x\\in\\mathbb R^2$ such that $\\mathbf x=\\lambda\\mathbf u(\\theta)$ for $\\lambda=5$ and $\\theta=\\pi/4$. Note that $\\mathbf u(\\theta)=\\begin{pmatrix}\\cos\\theta\\\\\\sin\\theta\\end{pmatrix}$.",
     "questionZh": "取 $\\lambda=5$、$\\theta=\\pi/4$，求满足 $\\mathbf x=\\lambda\\mathbf u(\\theta)$ 的 $\\mathbf x\\in\\mathbb R^2$，其中 $\\mathbf u(\\theta)=\\begin{pmatrix}\\cos\\theta\\\\\\sin\\theta\\end{pmatrix}$。",
     "overview": {
@@ -814,7 +814,7 @@
     "id": "A4",
     "title": "Cartesian to polar on the axes · 坐标轴上的极坐标",
     "scope": "课堂核心",
-    "source": "Week 1 tutorial activities; A numbers are website activity labels, not problem-sheet numbers. Worked explanations are independently expanded tutor preparation.",
+    "source": "原题来源 / Question source: Linear Algebra tutorial ideas 2026, p. 2, Week 1, Questions · 第 3 项：(3,0) 与 (0,−3). A1–A6 are local activity labels, NOT Problem Sheet 1 question numbers. 知识联系（非原题对应）：Q1.6：方向角与极坐标；这里是坐标轴特例。 Worked explanations, diagrams and checks are independently expanded tutor preparation.",
     "questionEn": "Write $\\begin{pmatrix}3\\\\0\\end{pmatrix}$ in the form $\\mathbf v=\\lambda\\mathbf u(\\theta)$ where $\\lambda>0$, $\\theta\\in[0,2\\pi)$, and $\\mathbf u(\\theta)=\\begin{pmatrix}\\cos\\theta\\\\\\sin\\theta\\end{pmatrix}$. What about $\\begin{pmatrix}0\\\\-3\\end{pmatrix}$?",
     "questionZh": "把 $\\begin{pmatrix}3\\\\0\\end{pmatrix}$ 写成 $\\mathbf v=\\lambda\\mathbf u(\\theta)$，其中 $\\lambda>0$、$\\theta\\in[0,2\\pi)$，$\\mathbf u(\\theta)=\\begin{pmatrix}\\cos\\theta\\\\\\sin\\theta\\end{pmatrix}$。那么 $\\begin{pmatrix}0\\\\-3\\end{pmatrix}$ 呢？",
     "overview": {
@@ -871,7 +871,7 @@
     "id": "A5",
     "title": "Complex fraction · 复数分式",
     "scope": "课堂核心",
-    "source": "Week 1 tutorial activities; A numbers are website activity labels, not problem-sheet numbers. Worked explanations are independently expanded tutor preparation.",
+    "source": "原题来源 / Question source: Linear Algebra tutorial ideas 2026, p. 2, Week 1, Questions · 第 4 项：复数分式. A1–A6 are local activity labels, NOT Problem Sheet 1 question numbers. 知识联系（非原题对应）：Q1.4：共轭、商与模的性质；这里练计算，正式题要求证明。 Worked explanations, diagrams and checks are independently expanded tutor preparation.",
     "questionEn": "Write $\\displaystyle\\frac{(3+2i)(3-2i)}{i+1}$ in the form $a+bi$ for $a,b\\in\\mathbb R$.",
     "questionZh": "把 $\\displaystyle\\frac{(3+2i)(3-2i)}{i+1}$ 写成 $a+bi$，其中 $a,b\\in\\mathbb R$。",
     "overview": {
@@ -934,7 +934,7 @@
     "id": "A6",
     "title": "Dot product and cosine · 点积与夹角余弦",
     "scope": "课堂可选 · 有时间再做",
-    "source": "Week 1 tutorial activities; A numbers are website activity labels, not problem-sheet numbers. Worked explanations are independently expanded tutor preparation.",
+    "source": "原题来源 / Question source: Linear Algebra tutorial ideas 2026, p. 3, Week 1, Questions · 第 5 项（跨页）：点积与夹角. A1–A6 are local activity labels, NOT Problem Sheet 1 question numbers. 知识联系（非原题对应）：Q1.6：点积与夹角关系；也联系 Q1.5 的正交，但本例不正交。 Worked explanations, diagrams and checks are independently expanded tutor preparation.",
     "questionEn": "Compute the dot product $\\begin{pmatrix}1\\\\2\\end{pmatrix}\\cdot\\begin{pmatrix}6\\\\-8\\end{pmatrix}$ and hence determine the cosine of the angle between the vectors.",
     "questionZh": "计算点积 $\\begin{pmatrix}1\\\\2\\end{pmatrix}\\cdot\\begin{pmatrix}6\\\\-8\\end{pmatrix}$，并据此求两向量夹角的余弦。",
     "overview": {
@@ -1346,7 +1346,7 @@
     "id": "B6",
     "title": "Q1.6 · Dot products and angles · 点积与夹角",
     "scope": "Problem Sheet 1 · 完整备课",
-    "source": "Linear Algebra 2026 · Problem Sheet 1 · Q1.6；题意据课程题单核对，以下为独立展开解答，并非官方答案逐字引用。",
+    "source": "Linear Algebra 2026 · Problem Sheet 1 · Q1.6；题意据课程题单核对，以下为独立展开解答，并非官方答案逐字引用。 本页题目为题意改述，含教学澄清（较小夹角、零向量或角度变换），不是官方逐字题面；原题措辞以学校题单为准。",
     "questionEn": "Let $v,w\\in\\mathbb R^2$. (a) Write them in polar form and sketch how to find the angle between them. (b) Express $v\\cdot w$ using polar coordinates and $\\cos\\phi\\cos\\theta+\\sin\\phi\\sin\\theta=\\cos(\\phi-\\theta)$. State the smaller angle in $[0,\\pi]$ when both vectors are nonzero.",
     "questionZh": "设 $v,w\\in\\mathbb R^2$。(a) 写成极坐标形式，并画图说明如何找到夹角。(b) 利用极坐标和 $\\cos\\phi\\cos\\theta+\\sin\\phi\\sin\\theta=\\cos(\\phi-\\theta)$ 表示点积。两向量非零时，明确取 $[0,\\pi]$ 内的较小夹角。",
     "overview": {
@@ -1506,7 +1506,7 @@
     "id": "B9",
     "title": "Q1.9 · Cosine rule and triangle inequality · 余弦定理与三角不等式",
     "scope": "Problem Sheet 1 · 完整备课",
-    "source": "Linear Algebra 2026 · Problem Sheet 1 · Q1.9；题意据课程题单核对，以下为独立展开解答，并非官方答案逐字引用。",
+    "source": "Linear Algebra 2026 · Problem Sheet 1 · Q1.9；题意据课程题单核对，以下为独立展开解答，并非官方答案逐字引用。 本页题目为题意改述，含教学澄清（较小夹角、零向量或角度变换），不是官方逐字题面；原题措辞以学校题单为准。",
     "questionEn": "Consider a triangle with positive side lengths $a,b,c$ and angle $\\gamma$ between the sides of lengths $a,b$. (a) Set $u=(a,0)$ and $v=b(\\cos\\gamma,\\sin\\gamma)$; find their norms. (b) Use $\\|u-v\\|$ to prove $c^2=a^2+b^2-2ab\\cos\\gamma$. (c) Show $c^2\\le(a+b)^2$ and determine equality for $\\gamma\\in[0,\\pi]$. (d) Deduce $\\|x+y\\|\\le\\|x\\|+\\|y\\|$; explain the angle change when using $v=-y$, and handle zero vectors.",
     "questionZh": "一个三角形的三边长度 $a,b,c$ 为正数，$a,b$ 两边夹角为 $\\gamma$。(a) 令 $u=(a,0)$、$v=b(\\cos\\gamma,\\sin\\gamma)$，求长度。(b) 利用 $\\|u-v\\|$ 证明 $c^2=a^2+b^2-2ab\\cos\\gamma$。(c) 证明 $c^2\\le(a+b)^2$，并在 $\\gamma\\in[0,\\pi]$ 下判断等号条件。(d) 推出 $\\|x+y\\|\\le\\|x\\|+\\|y\\|$；说明使用 $v=-y$ 时的夹角变化，并处理零向量。",
     "overview": {
@@ -1810,7 +1810,7 @@
     "id": "T1",
     "title": "本周安排、作业与讲解边界",
     "scope": "课程安排 · 教师备课",
-    "source": "2026-09-24 核对 Blackboard：Linear Algebra Problem Sheet 1、课程作业说明及教师 Week 1 活动建议；学生预览下待交题解答可见性未核实。",
+    "source": "2026-09-24 核对 Blackboard 学生可见的题单入口及其 HTML 正文、课程说明、导师邮件和 Week 1 活动建议；从教师登录会话读取，未使用 Student Preview。",
     "questionEn": "What should we finish in this tutorial, and what should students do afterwards?",
     "questionZh": "本节课讲到哪里？学生之后要完成什么？",
     "overview": {
@@ -1819,8 +1819,8 @@
     },
     "prerequisites": [
       {
-        "en": "Distinguish the Numbas quiz, the paper hand-in question, and the additional practice problems.",
-        "zh": "区分 Numbas quiz、纸面待交题与附加练习。"
+        "en": "Distinguish the assessed Numbas quiz, written hand-in Q1.1 submitted on Blackboard for feedback, and additional practice Q1.2–Q1.13.",
+        "zh": "区分计分的 Numbas quiz、通过 Blackboard 提交并获取反馈的书面作业 Q1.1，以及附加练习 Q1.2–Q1.13。"
       }
     ],
     "strategy": [
@@ -1839,16 +1839,24 @@
         "zh": "Quiz 1 与待交题 Q1.1 均于 2026 年 9 月 30 日周三英国当地时间中午 12 点截止。若教师有后续通知，以实时课程页面为准。"
       },
       {
-        "en": "The Numbas quiz is graded; repeated attempts are allowed and the highest attempt counts. The paper hand-in is not graded: it is for tutor feedback, and an incomplete attempt is still worth submitting.",
-        "zh": "Numbas quiz 计分，可以多次尝试，取最高成绩。纸面作业不计分，用于 tutor 反馈；未完全做完也值得提交。"
+        "en": "The Numbas quiz is assessed; repeated attempts are allowed and the best completed attempt counts. Hand-in Q1.1 does not contribute to the final grade. Tutors record submission out of 1 (1 for submitting an attempt), rather than grading correctness; an incomplete attempt is worth submitting.",
+        "zh": "Numbas quiz 计分，可多次尝试，取已完成尝试中的最高分。Hand-in Q1.1 不计入总评；导师用满分 1 分记录提交情况（提交尝试记 1），不是按正确程度评分。没完全做完也应提交。"
       },
       {
         "en": "The Week 1 teacher guidance says not to go through the hand-in solution in this tutorial. Offer starting questions, not the final parameter or proof. The full C1 solution is here for your preparation, collapsed by default.",
         "zh": "教师 Week 1 建议要求本周不要完整讲待交题答案。可以给起步问题，不给最终参数或完整证明。C1 全解供你备课，默认折叠。"
       },
       {
-        "en": "Official course information says additional-problem solutions are available immediately. This was checked in the staff session; visibility of the hand-in answer in student preview has not been established.",
-        "zh": "官方说明附加题解答可立即查看。本次核对使用教师会话；待交题答案在学生预览中的可见性尚未核实。"
+        "en": "Additional-question hints and solutions are available immediately. On 24 September, opening Q1.1’s Reveal Solution on the linked student-visible HTML sheet showed only a notice that solutions will be available after the submission deadline, not a worked answer. The precise publication time is not stated.",
+        "zh": "附加题的提示和答案可立即查看。9 月 24 日打开学生可见入口链接的 HTML 题单，Q1.1 的 Reveal Solution 只有“截止后提供答案”的说明，没有完整解答；未写具体发布时间。"
+      },
+      {
+        "en": "A1–A6 are tutor activity labels, not the formal additional-question numbers. No separate A1–A6 answer resource was found in the inspected Learning activities list or Problem Sheet 1; this is not a claim that no equivalent example exists anywhere on Blackboard.",
+        "zh": "A1–A6 是教师活动的本地编号，不是正式附加题号。在已检查的 Learning activities 列表和题单 1 中未找到单独的 A1–A6 答案资源；这不意味着 Blackboard 所有材料都没有类似例子。"
+      },
+      {
+        "en": "For Q1.1(a), a starting hint is: write u+v in coordinates, then calculate the three lengths separately. For (b), try three vectors first and ask how to group them to apply the two-vector triangle inequality. Leave the final parameter, complete inequality chain and equality example to the student.",
+        "zh": "Q1.1(a) 的入手提示：先写 u+v 的坐标，再分别算三个长度。(b) 可先试三个向量，想怎样分组使用两个向量的三角不等式。最终参数、完整不等式链和取等例子留给学生。"
       }
     ],
     "say": {

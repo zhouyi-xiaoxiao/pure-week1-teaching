@@ -13,5 +13,50 @@
   "notice": "这是含完整答案的教师备课版，不是学生投屏版。K 为前提知识；A1–A6 为本网站给教师活动编的编号；B2–B13 对应正式题单 Q1.2–Q1.13；C1 对应待交 Q1.1，本周课堂只给起步提示。资料完整不等于一小时全部讲完。",
   "sourceSummary": "根据 2026 教师活动建议第 1–4 页、Problem Sheet 1 及 9 月 24 日 Blackboard 核对；详细展开与额外讲法为备课补充，不冒称官方答案原文。",
   "publication": "approved",
-  "printPack": true
+  "printPack": true,
+  "activitySources": [
+    {
+      "id": "A1",
+      "page": 2,
+      "original": "Warm-up · 2 − i 的不同表示",
+      "related": "B6",
+      "relationship": "Q1.6：极坐标与方向；这里用的是复数示例，不是 Q1.6 原题。"
+    },
+    {
+      "id": "A2",
+      "page": 2,
+      "original": "Questions · 第 1 项：向量计算",
+      "related": "B2",
+      "relationship": "Q1.2：向量、坐标与图示的基础；正式题没有这组 x、y 方程。"
+    },
+    {
+      "id": "A3",
+      "page": 2,
+      "original": "Questions · 第 2 项：λ = 5，θ = π/4",
+      "related": "B6",
+      "relationship": "Q1.6：极坐标表示的入门计算；不是原题的证明要求。"
+    },
+    {
+      "id": "A4",
+      "page": 2,
+      "original": "Questions · 第 3 项：(3,0) 与 (0,−3)",
+      "related": "B6",
+      "relationship": "Q1.6：方向角与极坐标；这里是坐标轴特例。"
+    },
+    {
+      "id": "A5",
+      "page": 2,
+      "original": "Questions · 第 4 项：复数分式",
+      "related": "B4",
+      "relationship": "Q1.4：共轭、商与模的性质；这里练计算，正式题要求证明。"
+    },
+    {
+      "id": "A6",
+      "page": 3,
+      "original": "Questions · 第 5 项（跨页）：点积与夹角",
+      "related": "B6",
+      "relationship": "Q1.6：点积与夹角关系；也联系 Q1.5 的正交，但本例不正交。"
+    }
+  ],
+  "reviewLabel": "2026-09-24 · 来源、课堂主线与阅读操作复核版"
 }
