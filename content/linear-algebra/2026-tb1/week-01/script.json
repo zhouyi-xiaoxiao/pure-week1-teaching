@@ -1,0 +1,659 @@
+[
+  {
+    "title": "线性代数 · 使用说明",
+    "subtitle": "Week 1 · Group 07 · Friday 25 September 2026",
+    "blocks": [
+      {
+        "type": "note",
+        "text": "教师自用：计划 09:00–09:50。英文可直接说；中文是备课解释和动作提示，不需读出。A1–A6 是本站给教师活动编的导航编号，不是原 Problem Sheet 的题号。"
+      },
+      {
+        "type": "action",
+        "text": "课前在黑板留一句：How many different ways can we represent 2 − i? 学生进教室时可先想。开场仍先做概念回顾，再回收这个热身。"
+      },
+      {
+        "type": "note",
+        "text": "主线：短概念回顾 → A1 同一复数的表示 → A2 向量计算 → A3/A4 两种坐标互换 → A5 复数除法。A6 点积夹角只在学生已学且有时间时做。资料完整不代表本节要全讲完。"
+      },
+      {
+        "type": "action",
+        "text": "时间：09:00–09:05 开场；09:05–09:09 A1；09:09–09:19 A2；09:19–09:24 A3；09:24–09:32 A4；09:32–09:42 A5；09:42–09:47 A6 可选。09:28 检查理解：若仍卡在分量或角度，取消 A6，并把 A5 限为一道必要练习。09:40 不再开新题，除非主线已稳。09:47 无条件收尾，09:50 结束。"
+      },
+      {
+        "type": "note",
+        "text": "原教师指导建议学生成对或三人计算并解释，不建议教师把答案逐题念完。课后作业允许不完美，鼓励把卡住的位置和问题写在提交中。未核实的反馈日期、联系渠道不要临场承诺。"
+      },
+      {
+        "type": "note",
+        "text": "本周 hand-in 的完整解答只供教师备课，本节不要逐步讲完；可给入手提示。已核对本周 Blackboard：Numbas Quiz 1 与 hand-in Q1.1 均于 2026 年 9 月 30 日星期三中午 12 点截止。Quiz 计分、可多次尝试且取最高分；hand-in 不计入总评，用于反馈。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "This is a working session, not a race through a list. We will use sketches, calculate in pairs, and explain our checks. Please tell me where you get stuck; that is useful information, not a problem.",
+        "cn": "这是练习课，不是赶题单。通过画图、结对计算和解释检查方法学习；卡住的位置正是值得讨论的信息。"
+      },
+      "action": "开计时器前先看主线；课上学生动笔时停止读稿。完整解答可按 topic 链接查阅，不按资料库目录一路讲。",
+      "check": {
+        "en": "Can I name the one idea I want students to take away from each activity?",
+        "cn": "A1 同对象多表示；A2 分量与方程；A3/A4 长度和方向；A5 共轭消去分母虚部；A6 归一化点积。"
+      }
+    }
+  },
+  {
+    "title": "开场与概念回顾",
+    "subtitle": "09:00–09:05 · 1 分钟介绍 + 3 分钟概念 + 1 分钟检查",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "Hi everyone. I'm Xiaoxiao, your Linear Algebra tutor. We will work on questions together. Please ask questions, and be ready to explain a step rather than just give a number.",
+        "cn": "大家好，我是 Xiaoxiao，是你们的线性代数 tutor。我们一起做题，请随时提问，也准备解释一个步骤，而不只是报答案。"
+      },
+      {
+        "type": "say",
+        "en": "Which lecture group are you in, and how far have you got? Have you covered polar coordinates and the dot product yet?",
+        "cn": "你们属于哪个讲座分流班？实际讲到哪里了？极坐标和点积已经学过了吗？"
+      },
+      {
+        "type": "action",
+        "text": "等 5–8 秒并听一两人回答；不把点头或沉默当作全班已掌握。点积没学则跳过 A6。若极坐标没学，先用图引入，不称为“大家都知道的”。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{pmatrix}a\\\\b\\end{pmatrix}\\in\\mathbb R^2\\qquad\\longleftrightarrow\\qquad a+bi\\in\\mathbb C,\\quad i^2=-1"
+      },
+      {
+        "type": "say",
+        "en": "A vector in the plane has two components. The first is horizontal, and the second is vertical. We can draw it as an arrow from the origin. A complex number a plus b i corresponds to the same point: a on the real axis, and b on the imaginary axis.",
+        "cn": "平面向量有两个分量：第一个水平，第二个竖直，可画成从原点出发的箭头。复数 a+bi 对应同一点：实轴坐标 a，虚轴坐标 b。"
+      },
+      {
+        "type": "note",
+        "text": "这里建立平面上的对应，不说复数乘法就是向量逐分量相乘。虚部是实数 b，不是 bi。向量可平移画出，但本节用从原点出发的表示最方便。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{pmatrix}a\\\\b\\end{pmatrix}+\\begin{pmatrix}c\\\\d\\end{pmatrix}=\\begin{pmatrix}a+c\\\\b+d\\end{pmatrix},\\qquad t\\begin{pmatrix}a\\\\b\\end{pmatrix}=\\begin{pmatrix}ta\\\\tb\\end{pmatrix}"
+      },
+      {
+        "type": "say",
+        "en": "We add matching components. Multiplying by a real scalar multiplies both components. We can describe a nonzero arrow in another way too: by its length and its direction. That will connect our coordinate questions.",
+        "cn": "向量相加对应分量分别相加；乘实数时两个分量都乘。非零箭头也能由长度和方向描述，这就连接到后面的坐标题。"
+      },
+      {
+        "type": "say",
+        "en": "For three minus two i, what are the horizontal and vertical coordinates? Where would the point sit?",
+        "cn": "对于 3−2i，水平和竖直坐标各是多少？点在哪里？"
+      },
+      {
+        "type": "action",
+        "text": "停 5–8 秒，请学生说坐标并用手示意位置，再核对。这里只做简短检查，不提前完整讲解 2−i 的热身。"
+      },
+      {
+        "type": "answer",
+        "en": "The coordinates are three and minus two, so it is to the right and below the origin. Its imaginary part is minus two, not minus two i.",
+        "cn": "坐标是 (3,−2)，在原点右下方。虚部是 −2，不是 −2i。"
+      },
+      {
+        "type": "say",
+        "en": "Let's use those ideas on the warm-up you saw as you came in.",
+        "cn": "用这些概念来看大家进门时看到的热身。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Hi everyone, I'm Xiaoxiao. Which lecture group are you in, and how far have you got? A plane vector has horizontal and vertical components. The complex number a plus b i corresponds to the point with coordinates a and b. We add matching components; real scaling changes both.",
+        "cn": "先确认讲座分流和实际进度；回顾平面向量两个分量、复数与平面点的对应、按分量相加和数乘。"
+      },
+      "action": "介绍控制 1 分钟；3 分钟指板书回顾；最后问 CHECK，等待后核对。没学点积就取消 A6。",
+      "check": {
+        "en": "Where would you plot three minus two i? What is its imaginary part?",
+        "cn": "坐标 (3,−2)，右下方；虚部 −2。若混淆，先画带正方向的两条轴。"
+      }
+    },
+    "topic": "K1"
+  },
+  {
+    "title": "A1 热身：同一个数的不同表示",
+    "subtitle": "09:05–09:09 · 先画图，再谈长度和角度",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "How many different ways can we represent the complex number two minus i? First sketch it on an Argand diagram. Then compare with the person next to you. Can you give a vector representation, and perhaps a polar representation?",
+        "cn": "复数 2−i 能用多少种方式表示？先画在 Argand 图上，再与旁边同学比较。能写成向量吗？还可以给出极形式吗？"
+      },
+      {
+        "type": "math",
+        "text": "z=2-i"
+      },
+      {
+        "type": "action",
+        "text": "给 45–60 秒动笔。先请一组给图和坐标，再请另一组给长度；角度尚未学过则接受图示，解释后续会练，不要一开始就展开反三角计算。"
+      },
+      {
+        "type": "say",
+        "en": "Which quadrant must the point be in? What does Pythagoras tell us about its distance from the origin?",
+        "cn": "点一定在哪个象限？用勾股定理可得到离原点多远？"
+      },
+      {
+        "type": "answer",
+        "en": "It is in the fourth quadrant, at two, minus one. Its distance from the origin is the square root of five. The picture tells us the angle is below the positive real axis.",
+        "cn": "位于第四象限 (2,−1)，模为 √5。图说明方向在正实轴下方。"
+      },
+      {
+        "type": "math",
+        "text": "2-i\\ \\longleftrightarrow\\ \\begin{pmatrix}2\\\\-1\\end{pmatrix},\\quad r=\\sqrt5,\\quad \\theta=-\\arctan(1/2)\\pmod{2\\pi}"
+      },
+      {
+        "type": "math",
+        "text": "2-i=\\sqrt5(\\cos\\theta+i\\sin\\theta),\\quad \\theta=2\\pi-\\arctan(1/2)\\ \\text{if }0\\leq\\theta<2\\pi"
+      },
+      {
+        "type": "say",
+        "en": "These are different descriptions of the same point. An angle can have more than one numerical representative, so always check the requested interval.",
+        "cn": "这些是同一点的不同描述。角度可有多个数值代表，因此要检查题目要求的范围。"
+      },
+      {
+        "type": "backup",
+        "en": "If you already know the polar answer, explain how your sketch rules out an angle in the first quadrant.",
+        "cn": "已经知道极形式的同学，请解释图为什么排除第一象限的角。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Sketch two minus i. Compare with your partner: what are its coordinates, its length, and its direction? We are not finding different complex numbers. We are describing the same number in different ways. Use the picture before choosing an angle.",
+        "cn": "先画 2−i，再同桌讨论坐标、长度和方向；强调同一对象的不同表示。"
+      },
+      "action": "学生写 45–60 秒；先听图和坐标，再核对模。若极坐标没学，暂留方向图示。",
+      "check": {
+        "en": "Why is a positive acute angle wrong for this point?",
+        "cn": "正锐角给正虚部，但原数虚部为负；点必须在第四象限。"
+      }
+    },
+    "topic": "A1"
+  },
+  {
+    "title": "A2 向量计算：先算分量，再解方程",
+    "subtitle": "09:09–09:19 · 两人或三人一组",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "Work in pairs or threes. Find x and y from these two statements. You have about three minutes to start. One person can calculate, and another can check the steps; then swap roles.",
+        "cn": "两人或三人一组，根据下列两条式子求 x、y。先给三分钟开始；一人计算、一人检查，然后换角色。"
+      },
+      {
+        "type": "math",
+        "text": "u=\\begin{pmatrix}4\\\\0\\end{pmatrix},\\quad v=\\begin{pmatrix}1\\\\2\\end{pmatrix},\\quad w=\\begin{pmatrix}1\\\\-2\\end{pmatrix},\\quad x,y\\in\\mathbb R^2"
+      },
+      {
+        "type": "math",
+        "text": "x=3u-2(v+w),\\qquad w-y=y-u"
+      },
+      {
+        "type": "action",
+        "text": "巡视看两点：−2 是否分配到整个 v+w；第二式是否真的把两份 y 合并。先问卡在哪一步，不立刻把答案写出。三分钟后请两组各解释一个式子。"
+      },
+      {
+        "type": "say",
+        "en": "For x, which bracket can you simplify first? For y, can you collect both copies of y on the same side?",
+        "cn": "求 x 时可以先简化哪一个括号？求 y 时怎样把两份 y 移到同一边？"
+      },
+      {
+        "type": "math",
+        "text": "v+w=\\begin{pmatrix}2\\\\0\\end{pmatrix},\\qquad x=\\begin{pmatrix}12\\\\0\\end{pmatrix}-\\begin{pmatrix}4\\\\0\\end{pmatrix}=\\begin{pmatrix}8\\\\0\\end{pmatrix}"
+      },
+      {
+        "type": "answer",
+        "en": "The vertical components of v and w cancel. That gives x equal to eight, zero. From w minus y equals y minus u, adding y and u gives u plus w equals two y.",
+        "cn": "v 和 w 的竖直分量抵消，所以 x=(8,0)。第二式两边加 y 和 u，得到 u+w=2y。"
+      },
+      {
+        "type": "math",
+        "text": "2y=u+w=\\begin{pmatrix}5\\\\-2\\end{pmatrix},\\qquad y=\\begin{pmatrix}5/2\\\\-1\\end{pmatrix}"
+      },
+      {
+        "type": "say",
+        "en": "How can we check y without repeating exactly the same rearrangement? Substitute it into both sides of the original equation.",
+        "cn": "不用重复同一套移项，怎样检查 y？把它代回原方程左右两边。"
+      },
+      {
+        "type": "math",
+        "text": "w-y=\\begin{pmatrix}-3/2\\\\-1\\end{pmatrix}=y-u"
+      },
+      {
+        "type": "answer",
+        "en": "Geometrically, y is the midpoint of the position vectors u and w. Both sides describe the same displacement from u to y and from y to w.",
+        "cn": "从图看，y 是 u、w 对应点的中点；从 u 到 y 与从 y 到 w 的位移相同。"
+      },
+      {
+        "type": "backup",
+        "en": "If you finish early, explain why y is a midpoint, or sketch u, w and y. A checked explanation is more useful than a second unexamined answer.",
+        "cn": "提前完成就解释为什么是中点，或画 u、w、y。比再报一个未经检查的答案更重要的是解释。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Find x and y in pairs. Start with the bracket for x. For y, collect the two copies of y before dividing by two. Be ready to explain one step. When you finish, check y in the original equation, not just in your rearranged version.",
+        "cn": "结对求 x、y；x 先算括号，y 收集两份 y 再除以 2；代回原式检查。"
+      },
+      "action": "先给 3 分钟独立合作；巡视后请两组分别解释。答案不要先写满；学生说完再揭示下方板书。",
+      "check": {
+        "en": "What are w minus y and y minus u when y is five halves, minus one?",
+        "cn": "两边均为 (−3/2,−1)，验证成立；若不相等，先查负号。"
+      }
+    },
+    "topic": "A2"
+  },
+  {
+    "title": "A3 极坐标到直角坐标",
+    "subtitle": "09:19–09:24 · 长度乘单位方向",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "Find x when x equals lambda times u theta, with lambda equal to five and theta equal to pi over four. Use the definition shown here. First predict the signs of the two components.",
+        "cn": "已知 x=λu(θ)，λ=5，θ=π/4，求 x。使用下方定义，先预测两个分量的正负。"
+      },
+      {
+        "type": "math",
+        "text": "u(\\theta)=\\begin{pmatrix}\\cos\\theta\\\\\\sin\\theta\\end{pmatrix},\\qquad x=5u(\\pi/4)"
+      },
+      {
+        "type": "note",
+        "text": "此处 u(θ) 是单位方向向量，与 A2 中固定的 u=(4,0) 不是同一个定义；提醒学生每道题重新读定义。"
+      },
+      {
+        "type": "action",
+        "text": "给 45–60 秒算；请学生说明为什么两个分量相同。先画第一象限 45° 的方向，再展开公式。"
+      },
+      {
+        "type": "answer",
+        "en": "At pi over four, sine and cosine are both one over the square root of two. Multiply both components by five.",
+        "cn": "π/4 时正弦余弦都等于 1/√2；两个分量都乘以 5。"
+      },
+      {
+        "type": "math",
+        "text": "x=\\begin{pmatrix}5/\\sqrt2\\\\5/\\sqrt2\\end{pmatrix}=\\begin{pmatrix}5\\sqrt2/2\\\\5\\sqrt2/2\\end{pmatrix}"
+      },
+      {
+        "type": "say",
+        "en": "Should each component be five? No: five is the total length. Check the sum of the squared components.",
+        "cn": "每个分量都应该是 5 吗？不是，5 是整体长度。检查两个分量的平方和。"
+      },
+      {
+        "type": "math",
+        "text": "\\|x\\|^2=25/2+25/2=25,\\qquad \\|x\\|=5"
+      },
+      {
+        "type": "say",
+        "en": "Both components are positive and equal, so the result also matches our sketch.",
+        "cn": "两个分量同为正且相等，也与图一致。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Use the unit direction vector at pi over four, then multiply both components by five. Before calculating, predict the signs. After calculating, check the length. Five is the length of the vector, not the value of each component.",
+        "cn": "先预测符号，用 π/4 的单位方向向量乘 5；算完检查长度，而非让每个分量等于 5。"
+      },
+      "action": "学生算 45–60 秒；提醒这里的 u(θ) 是新定义，不沿用 A2 的 u。",
+      "check": {
+        "en": "How do the components show both a length of five and an angle of pi over four?",
+        "cn": "平方和 25，所以长度 5；两分量正且相等，对应第一象限 45°。"
+      }
+    },
+    "topic": "A3"
+  },
+  {
+    "title": "A4 直角坐标到极坐标",
+    "subtitle": "09:24–09:32 · 先画象限与轴，再选角度",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "Now reverse the process. Write each of these vectors as lambda times u theta, with lambda positive and theta in the interval from zero inclusive to two pi exclusive. Work with your partner.",
+        "cn": "现在反过来。把下面两个向量写成 λu(θ)，其中 λ>0、0≤θ<2π。与同伴一起做。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{pmatrix}3\\\\0\\end{pmatrix},\\qquad\\begin{pmatrix}0\\\\-3\\end{pmatrix},\\qquad u(\\theta)=\\begin{pmatrix}\\cos\\theta\\\\\\sin\\theta\\end{pmatrix}"
+      },
+      {
+        "type": "action",
+        "text": "先给 60–90 秒分别画两箭头；问角度从哪里量起、往哪边量。不要把 arctan(y/x) 当万能公式；第二个向量 x=0，直接看轴最清楚。"
+      },
+      {
+        "type": "say",
+        "en": "What is the length of each vector? Which axis does each one point along? Choose the angle only after that.",
+        "cn": "两个向量长度各是多少？各沿哪条轴指向哪边？确认这些之后再选角度。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{pmatrix}3\\\\0\\end{pmatrix}=3u(0),\\qquad\\begin{pmatrix}0\\\\-3\\end{pmatrix}=3u(3\\pi/2)"
+      },
+      {
+        "type": "answer",
+        "en": "Both lengths are three. The first angle is zero. The second is three pi over two in the required interval. Minus pi over two points in the same direction, but it is outside this interval.",
+        "cn": "长度都是 3。第一个角是 0；第二个按指定范围取 3π/2。−π/2 方向正确，但不在要求的区间内。"
+      },
+      {
+        "type": "say",
+        "en": "Could we use lambda equal to minus three and angle pi over two for the second vector? It gives the same coordinates, but does it meet this question’s conditions?",
+        "cn": "第二个能否写成 λ=−3、θ=π/2？坐标确实一样，但符合本题条件吗？"
+      },
+      {
+        "type": "answer",
+        "en": "No. The question requires lambda to be positive. We keep the length positive and put the direction into theta.",
+        "cn": "不符合，本题明确 λ>0。把长度保持为正，用 θ 表示方向。"
+      },
+      {
+        "type": "action",
+        "text": "09:28 检查：若有人把方向和负长度混在一起，再用第二幅图巩固，取消 A6。09:32 转 A5；如不得不晚一点，缩短讨论而不是取消最后总结。"
+      },
+      {
+        "type": "backup",
+        "en": "If this is straightforward, choose another nonzero vector on an axis and ask your partner for its allowed angle. Do not change the interval.",
+        "cn": "已经熟练就另选一个坐标轴上的非零向量，问同伴规定区间里的角；不要改变题目范围。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "For each vector, sketch first, find the positive length, and then choose an angle in the required interval. The interval matters. Minus pi over two has the right direction for the second vector, but this question asks for three pi over two.",
+        "cn": "先图、后正长度、再指定区间里的角。第二个方向可说 −π/2，但本题要 3π/2。"
+      },
+      "action": "学生画图 60–90 秒。09:28 若仍混淆正长度/方向，取消 A6；保留一题复数除法和收尾。",
+      "check": {
+        "en": "Why is lambda equal to minus three not an allowed answer here?",
+        "cn": "虽可配合另一角得到同一向量，但违反题目 λ>0；长度必须为正。"
+      }
+    },
+    "topic": "A4"
+  },
+  {
+    "title": "A5 复数除法：为什么乘共轭",
+    "subtitle": "09:32–09:42 · 先简化分子，再处理分母",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "Write this expression in the form a plus b i, where a and b are real. Work together for two minutes. Look for a useful simplification before expanding everything.",
+        "cn": "把下列表达式写成 a+bi，a、b 都是实数。先合作两分钟；展开所有东西之前，找一个能简化的结构。"
+      },
+      {
+        "type": "math",
+        "text": "\\frac{(3+2i)(3-2i)}{i+1}"
+      },
+      {
+        "type": "action",
+        "text": "提醒整段 (3+2i)(3−2i) 是分子，1+i 是分母。巡视常见错误 i²=1、只给分母乘共轭、把 1/(1+i) 写成 1−i。"
+      },
+      {
+        "type": "say",
+        "en": "What happens to the imaginary terms in the numerator? What happens to i squared?",
+        "cn": "分子里的虚数交叉项会怎样？i 的平方是什么？"
+      },
+      {
+        "type": "math",
+        "text": "(3+2i)(3-2i)=9-4i^2=13"
+      },
+      {
+        "type": "answer",
+        "en": "The cross terms cancel, and i squared is minus one, so the numerator is thirteen. We still need to rewrite thirteen divided by one plus i.",
+        "cn": "交叉项抵消，i²=−1，所以分子为 13。接下来仍要处理 13/(1+i)。"
+      },
+      {
+        "type": "say",
+        "en": "What can we multiply one plus i by to get a real number? And what must we do to the numerator to keep the same value?",
+        "cn": "1+i 乘什么会变成实数？为了不改变原值，分子必须同时怎样做？"
+      },
+      {
+        "type": "action",
+        "text": "等 5–8 秒，先听“共轭”和“上下同乘”的理由，再写计算。"
+      },
+      {
+        "type": "math",
+        "text": "\\frac{13}{1+i}=\\frac{13(1-i)}{(1+i)(1-i)}=\\frac{13(1-i)}2=\\frac{13}2-\\frac{13}2i"
+      },
+      {
+        "type": "say",
+        "en": "We multiply the whole fraction by one, written as one minus i over one minus i. The conjugate makes the denominator real because the imaginary cross terms cancel.",
+        "cn": "我们给整个分式乘以 1，只是把 1 写成 (1−i)/(1−i)。共轭使分母虚部交叉项抵消，得到实数。"
+      },
+      {
+        "type": "say",
+        "en": "How can we check the final answer? Multiply it by the original denominator. What should we get?",
+        "cn": "怎样检查最后答案？乘回原分母，应该得到什么？"
+      },
+      {
+        "type": "math",
+        "text": "\\left(\\frac{13}2-\\frac{13}2i\\right)(1+i)=13"
+      },
+      {
+        "type": "answer",
+        "en": "We recover thirteen, the simplified numerator. The sign and the factor of two are both checked.",
+        "cn": "得到简化后的分子 13，同时检查负号和除以 2 是否正确。"
+      },
+      {
+        "type": "action",
+        "text": "09:40：若仍在解释此题，不开 A6。请学生用一句话说“为什么乘共轭”，再用乘回检查收束。09:42 若全部已稳且讲座已学点积，才进入可选 A6；否则让学生再解释这题或提一个问题。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Simplify the numerator first. Then use the conjugate to make the denominator real. Multiply both numerator and denominator, not just one of them. Finally, multiply your answer by the original denominator: you should recover thirteen. That is a useful independent check.",
+        "cn": "先化分子，再用共轭把分母化实；上下都乘，最后乘回原分母，应得到 13。"
+      },
+      "action": "留 2 分钟尝试；听完理由再展示答案。09:40 若仍不稳取消 A6，不赶着讲全部题目。",
+      "check": {
+        "en": "Why is thirteen times one minus i not the final answer?",
+        "cn": "因为 (1+i)(1−i)=2，还必须除以 2；正确结果 13/2−(13/2)i。"
+      }
+    },
+    "topic": "A5"
+  },
+  {
+    "title": "A6 可选：点积与夹角",
+    "subtitle": "09:42–09:47 · 只有已学且主线稳定时才做",
+    "blocks": [
+      {
+        "type": "note",
+        "text": "本环节随时可跳过。若学生讲座未覆盖点积/夹角公式，或已经过 09:42 且主线未稳，不临时塞一段新课。"
+      },
+      {
+        "type": "say",
+        "en": "If you have covered the dot product, try this final question. Compute the dot product of these vectors, and hence find the cosine of the angle between them. Predict whether the angle is acute or obtuse.",
+        "cn": "如果已经学过点积，做最后一题：求这两个向量的点积，并求夹角余弦。预测夹角是锐角还是钝角。"
+      },
+      {
+        "type": "math",
+        "text": "a=\\begin{pmatrix}1\\\\2\\end{pmatrix},\\quad b=\\begin{pmatrix}6\\\\-8\\end{pmatrix},\\qquad a\\cdot b=\\|a\\|\\|b\\|\\cos\\phi"
+      },
+      {
+        "type": "action",
+        "text": "给 60–90 秒，问结果是标量还是向量。若有人只报 −10，追问它是不是 cosine；先别替学生算长度。"
+      },
+      {
+        "type": "math",
+        "text": "a\\cdot b=1\\cdot6+2\\cdot(-8)=-10,\\quad \\|a\\|=\\sqrt5,\\quad\\|b\\|=10"
+      },
+      {
+        "type": "math",
+        "text": "\\cos\\phi=\\frac{-10}{10\\sqrt5}=-\\frac1{\\sqrt5}"
+      },
+      {
+        "type": "answer",
+        "en": "The dot product is minus ten, a scalar. Dividing by the product of the lengths gives minus one over the square root of five. The cosine is negative, so the angle between the nonzero vectors is obtuse.",
+        "cn": "点积是标量 −10；除以两向量长度乘积得到 −1/√5。夹角余弦负，所以夹角为钝角。"
+      },
+      {
+        "type": "say",
+        "en": "We were asked for the cosine, so we can stop here. We do not need an inverse cosine or a decimal angle.",
+        "cn": "题目要的是余弦，到这里可以停，不需要求反余弦或小数角度。"
+      },
+      {
+        "type": "action",
+        "text": "09:47 直接转总结，不管此题讲到哪一步。若没完成，把未完成的一步留作独立练习，不延长课堂。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Compute the dot product, then divide by the product of the lengths to find the cosine. These are different numbers. Use the sign as a geometric check: a negative cosine means an obtuse angle. We only need the cosine, not the angle itself.",
+        "cn": "点积与余弦是两个不同数值；点积还要除以模长乘积。负余弦对应钝角，无需求角度本身。"
+      },
+      "action": "仅已学且有空才用。学生算 60–90 秒；09:47 无条件收尾。",
+      "check": {
+        "en": "Could minus ten be a cosine? What factor are we missing?",
+        "cn": "不可以，余弦必须在 [−1,1]；缺少除以两模乘积 10√5。"
+      }
+    },
+    "topic": "A6"
+  },
+  {
+    "title": "总结、作业与准时下课",
+    "subtitle": "09:47–09:50 · 无条件收尾",
+    "blocks": [
+      {
+        "type": "say",
+        "en": "Before we finish, tell your partner one check you can use next time. For example, check vector components, use a sketch to choose an angle, or multiply a complex quotient back by its denominator.",
+        "cn": "结束前，跟同伴说一个下次可以用的检查方法：检查分量、用图选角，或把复数商乘回分母。"
+      },
+      {
+        "type": "action",
+        "text": "给 20–30 秒，然后听两人各说一句。不要重新从头演算所有答案。若 A6 没做，不把点积列成今天已掌握的内容。"
+      },
+      {
+        "type": "say",
+        "en": "For polar coordinates, check the length, the direction, and the allowed angle interval. For complex division, the conjugate is useful because it makes the denominator real.",
+        "cn": "极坐标检查长度、方向和允许的角度区间；复数除法中，共轭的作用是把分母化成实数。"
+      },
+      {
+        "type": "say",
+        "en": "Numbas Quiz One and the hand-in question are both due on Wednesday, the thirtieth of September, at twelve noon. The quiz counts towards your grade; you can try it more than once, and your highest score counts. The hand-in is for feedback, not marks towards your final grade. It does not have to be perfect: show your attempt and say where you are unsure.",
+        "cn": "Numbas Quiz 1 和 hand-in 均于 9 月 30 日星期三中午 12 点截止。Quiz 计入成绩，可多次尝试，取最高分；hand-in 不计入总评，用于反馈。作业不必完美：展示尝试并说明疑问。"
+      },
+      {
+        "type": "say",
+        "en": "For the hand-in question, start by writing out the vectors and their lengths carefully. For the part with several vectors, think about how to use the two-vector triangle inequality more than once. I will leave the full argument for you to work through.",
+        "cn": "hand-in 可从认真写出向量及其长度开始；多个向量那一问，思考如何不止一次使用两个向量的三角不等式。完整论证留给大家自己完成。"
+      },
+      {
+        "type": "note",
+        "text": "只给上述入手提示，不在本节给出 hand-in 的最终参数值、逐次平方过程、完整不等式链或取等实例。完整教师答案留在单独参考项 C1，不顺着导航朗读。"
+      },
+      {
+        "type": "say",
+        "en": "What is one step you would still like to practise? Make a note of it. Thank you, everyone. We'll finish here.",
+        "cn": "还有哪一步你想继续练？记下来。谢谢大家，我们今天到这里。"
+      },
+      {
+        "type": "action",
+        "text": "09:50 结束。不承诺未经确认的 office hour、邮件地址或反馈日期。若有人个别提问，先让其他人准时离开，再视后续安排短答。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "Choose one check you will use next time. Numbas Quiz One and the hand-in are due on Wednesday, the thirtieth of September, at twelve noon. The quiz counts towards your grade; the hand-in is for feedback. Submit your attempt and mark what is unclear. Thank you; we will finish here.",
+        "cn": "回收一个检查方法；提醒 Numbas Quiz 1 与 hand-in 都是 9 月 30 日星期三中午 12 点截止。Quiz 计分，hand-in 用于反馈，不完美也提交并标注疑问；准时结束。"
+      },
+      "action": "09:47 开始，20–30 秒同伴交流，听两句；提醒已核实截止时间；仅给 hand-in 起步提示；09:50 结束。",
+      "check": {
+        "en": "What would you check first if your polar answer pointed into the wrong quadrant?",
+        "cn": "先对照坐标正负与草图，再检查角度/象限，不盲目相信反正切计算器。"
+      }
+    },
+    "topic": "T1"
+  },
+  {
+    "title": "临场应对：太快、太慢、已经见过答案",
+    "subtitle": "参考 · 不计入主线",
+    "blocks": [
+      {
+        "type": "student",
+        "en": "I have already seen the answer.",
+        "cn": "我已经看过答案了。"
+      },
+      {
+        "type": "backup",
+        "en": "Then explain a check without looking at it. For example, choose a nonzero vector on a different axis and ask your partner for a polar representation in the same interval.",
+        "cn": "那请不看答案，解释一个检查办法。例如另选一个轴上的非零向量，让同伴在同样区间里写极形式。"
+      },
+      {
+        "type": "action",
+        "text": "30 秒迁移题可用 (−2,0)：λ=2、θ=π。要求解释为什么不是 θ=0，不只报数。此题是自编检查，不冒充原题。"
+      },
+      {
+        "type": "student",
+        "en": "I don't know where to start.",
+        "cn": "我不知道从哪开始。"
+      },
+      {
+        "type": "backup",
+        "en": "Let us choose just one step. Can you mark the two components on a sketch, or simplify the first bracket? Tell me what each symbol means before we calculate.",
+        "cn": "先只选一步：能在图上标两个分量，或先化第一个括号吗？计算前先说符号意思。"
+      },
+      {
+        "type": "student",
+        "en": "Can you show the whole homework solution?",
+        "cn": "能把作业完整答案讲一下吗？"
+      },
+      {
+        "type": "backup",
+        "en": "I can help you identify a starting point and discuss what is unclear. I won't go through the full hand-in solution now; the argument should be your own.",
+        "cn": "可以帮你找入手点并解释不清楚的地方，但现在不逐步展示 hand-in 完整答案，论证应由你自己完成。"
+      },
+      {
+        "type": "backup",
+        "en": "We have time for one more check, not a whole new topic. Let us make sure this idea is clear, then finish on time.",
+        "cn": "时间只够再检查一点，不够开新主题。先把这个概念弄清，再准时结束。"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "If you have seen the answer, explain why it works or try a small variation. If you are stuck, choose one first step and tell me what the symbols mean. We can slow down without trying to cover every optional activity.",
+        "cn": "见过答案就解释理由或做小变式；卡住就选一步，说符号含义。允许放慢，不必覆盖可选题。"
+      },
+      "action": "参考页，出现对应情况才读。不要假设所有学生基础一样。",
+      "check": {
+        "en": "For the vector minus two, zero, what positive length and allowed angle would you use?",
+        "cn": "长度 2、角 π；位于负横轴而不是正横轴。"
+      }
+    }
+  },
+  {
+    "title": "英文读音与紧急主线",
+    "subtitle": "参考 · 抬头说，不连续读完",
+    "blocks": [
+      {
+        "type": "read",
+        "en": "component; magnitude; modulus; conjugate; scalar; dot product; clockwise; anticlockwise.",
+        "cn": "分量；大小/长度；模；共轭；标量；点积；顺时针；逆时针。"
+      },
+      {
+        "type": "read",
+        "en": "pi over four; three pi over two; five over the square root of two; one plus i; a plus b i.",
+        "cn": "π/4；3π/2；5/√2；1+i；a+bi。"
+      },
+      {
+        "type": "read",
+        "en": "The interval from zero inclusive to two pi exclusive.",
+        "cn": "区间包含 0，不包含 2π；别只说“between”而忽略端点。"
+      },
+      {
+        "type": "action",
+        "text": "紧急主线：概念 + 2−i 的图 → A2 只听一组完整解释 → A3/A4 各核对一个表示 → A5 共轭与乘回 → 09:47 收尾。先取消 A6，不取消学生动笔与理解检查。"
+      },
+      {
+        "type": "say",
+        "en": "What does the picture tell us? Which component changes? Does your answer satisfy the original equation? Can you explain why that step is valid?",
+        "cn": "图告诉我们什么？哪个分量改变？答案满足原方程吗？能解释这一步为什么成立吗？"
+      }
+    ],
+    "quick": {
+      "say": {
+        "en": "What does the picture tell us? Which component changes? Does the answer satisfy the original equation? Can you explain why that step is valid? These short questions are enough to turn a calculation into a discussion.",
+        "cn": "用“图告诉什么、哪个分量、代回成立吗、这步为什么”四类短问题带讨论。"
+      },
+      "action": "课前练术语；上课只查需要的一句，不把参考页当额外教学环节。",
+      "check": {
+        "en": "What does inclusive mean in the required angle interval?",
+        "cn": "左端点 0 允许；右端点 2π 不允许。"
+      }
+    }
+  }
+]

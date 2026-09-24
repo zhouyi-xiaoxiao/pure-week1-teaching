@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "katex": "0.18.9"
+  },
+  "scripts": {
+    "build": "node scripts/build-lessons.mjs",
+    "new:lesson": "node scripts/new-lesson.mjs",
+    "cache": "node scripts/update-cache.mjs"
   }
 }

@@ -3,8 +3,9 @@
   history.scrollRestoration = 'manual';
   const $ = selector => document.querySelector(selector);
   const all = selector => [...document.querySelectorAll(selector)];
-  const store = 'pure-full-library-v1';
-  const asset = './library-data.json?v=public2';
+  const config = document.body.dataset;
+  const store = config.storageKey || 'pure-full-library-v1';
+  const asset = config.reference || './library-data.json?v=public2';
   let items = [], filter = 'all', selected = 'K1', cn = true, size = 23;
   try {
     const prefs = JSON.parse(localStorage.getItem(store + '-prefs') || '{}');
@@ -123,7 +124,7 @@
   async function setupOffline() {
     const badge = $('#offline');
     try {
-      const registration = await navigator.serviceWorker.register('./sw.js', {updateViaCache: 'none'});
+      const registration = await navigator.serviceWorker.register(config.worker || './sw.js', {updateViaCache: 'none'});
       await registration.update(); await navigator.serviceWorker.ready;
       const update = async () => {
         const cached = await caches.match(new URL(asset, location.href));

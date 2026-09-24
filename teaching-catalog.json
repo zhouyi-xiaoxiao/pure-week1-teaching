@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "updated": "2026-09-24",
+  "courses": [
+    {
+      "id": "pure-mathematics",
+      "title": "纯数学",
+      "titleEn": "Introduction to Pure Mathematics",
+      "code": "MATH10027",
+      "terms": [
+        {
+          "id": "2026-tb1",
+          "title": "2026 TB1",
+          "weeks": [
+            {
+              "id": "week-01",
+              "number": 1,
+              "title": "Week 1 · 集合、元素与集合运算",
+              "topics": [
+                "集合与元素",
+                "属于与子集",
+                "空集与嵌套集合",
+                "并集、交集与差集",
+                "构造例子与反例"
+              ],
+              "status": "ready",
+              "date": "2026-09-24",
+              "script": "index.html?v=concepts1",
+              "reference": "library.html?v=font1",
+              "durationMinutes": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linear-algebra",
+      "title": "线性代数",
+      "titleEn": "Linear Algebra",
+      "code": "MATH10015",
+      "terms": [
+        {
+          "id": "2026-tb1",
+          "title": "2026 TB1",
+          "weeks": [
+            {
+              "id": "week-01",
+              "number": 1,
+              "title": "Week 1 · 向量、极坐标与复数",
+              "topics": [
+                "向量运算",
+                "极坐标",
+                "复数",
+                "点积与夹角"
+              ],
+              "status": "ready",
+              "date": "2026-09-25",
+              "script": "courses/linear-algebra/2026-tb1/week-01/index.html",
+              "reference": "courses/linear-algebra/2026-tb1/week-01/library.html",
+              "durationMinutes": 50
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

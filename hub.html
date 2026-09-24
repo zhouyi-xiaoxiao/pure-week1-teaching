@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#153d36">
+<title>TSR 备课与授课中心</title>
+<link rel="stylesheet" href="hub.css?v=1"><script src="hub.js?v=1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#lessons">跳到课程资料</a>
+<header class="masthead"><div class="brand">TSR <span>TEACHING DESK</span></div><h1>备课与授课中心</h1><p>按课程、学期和周次找资料。上课打开讲稿，备课查看完整详解。</p></header>
+<main>
+<section class="filters" aria-label="查找课程资料">
+<div class="filter-field"><label for="course">课程</label><select id="course"><option value="all">全部课程</option></select></div>
+<div class="filter-field search-field"><label for="search">搜索</label><input id="search" type="search" placeholder="课程名称、课程代码或知识点" autocomplete="off"></div>
+<button id="clear" type="button">清除筛选</button>
+</section>
+<div class="result-line"><p id="result-status" role="status" aria-live="polite">正在读取课程目录…</p><span id="updated"></span><span id="hub-offline" role="status">首次打开请联网</span></div>
+<section id="lessons" aria-label="可用课程资料" tabindex="-1"></section>
+<div id="load-error" class="notice" hidden><h2>目录暂时没有加载成功</h2><p>请检查网络并刷新。你仍可直接打开已经准备好的资料：</p><p><a href="index.html?v=concepts1">纯数学讲稿</a> · <a href="library.html?v=font1">纯数学完整资料</a> · <a href="courses/linear-algebra/2026-tb1/week-01/index.html">线性代数讲稿</a></p><button type="button" id="retry">重新加载</button></div>
+<aside class="usage-note"><h2>怎么用</h2><div class="usage-grid"><p><strong>课前：完整备课资料</strong><br>看前提知识、完整题目、分步解答、为什么这样想和其他解法。</p><p><strong>课上：中英对照讲稿</strong><br>跟随课堂流程，读英文提示，参考中文备注；不必讲完资料库里的每一道题。</p></div><p class="privacy">这是教师备课版本，包含答案及教学备注，不是学生投屏版。页面公开可访问；不分享链接、隐藏搜索收录，都不等于访问控制。</p></aside>
+</main>
+<footer><span>只列出实际准备的课程与周次，不用空白周次占位。</span><a href="architecture.html">资料组织与后续扩展说明</a></footer>
+<noscript><p class="notice">此目录需要 JavaScript。可以直接打开 <a href="index.html">纯数学讲稿</a> 或 <a href="courses/linear-algebra/2026-tb1/week-01/index.html">线性代数讲稿</a>。</p></noscript>
+</body></html>
