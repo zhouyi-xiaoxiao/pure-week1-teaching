@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-24",
+  "updated": "2026-10-07",
   "courses": [
     {
       "id": "pure-mathematics",
@@ -12,6 +12,22 @@
           "id": "2026-tb1",
           "title": "2026 TB1",
           "weeks": [
+            {
+              "id": "week-03",
+              "number": 3,
+              "title": "Week 3 · 整除、带余除法与 Bézout",
+              "topics": [
+                "整除与整数见证",
+                "带余除法",
+                "gcd 与 Bézout",
+                "定义驱动的证明"
+              ],
+              "status": "ready",
+              "date": "2026-10-08",
+              "script": "week3/index.html#pure-0",
+              "reference": "week3/teacher-guide.html",
+              "durationMinutes": 50
+            },
             {
               "id": "week-01",
               "number": 1,
@@ -43,6 +59,22 @@
           "id": "2026-tb1",
           "title": "2026 TB1",
           "weeks": [
+            {
+              "id": "week-03",
+              "number": 3,
+              "title": "Week 3 · 行列式与逆矩阵",
+              "topics": [
+                "行列式的零值判断",
+                "Laplace 展开",
+                "行操作的影响",
+                "Gauss–Jordan 补基础"
+              ],
+              "status": "ready",
+              "date": "2026-10-09",
+              "script": "week3/index.html#linear-0",
+              "reference": "week3/teacher-guide.html",
+              "durationMinutes": 50
+            },
             {
               "id": "week-01",
               "number": 1,
