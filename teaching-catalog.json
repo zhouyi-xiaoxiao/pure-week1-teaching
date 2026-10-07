@@ -24,10 +24,11 @@
               ],
               "status": "ready",
               "date": "2026-10-08",
-              "script": "week3/index.html#pure-0",
+              "script": "week3/index.html#pure-main-plan",
               "reference": "week3/teacher-guide.html",
-              "durationMinutes": 50,
-              "teachingMode": "boardwork-and-understanding-checks"
+              "durationMinutes": 60,
+              "teachingMode": "explain-write-board-check",
+              "timingPlan": "week3/index.html#pure-main-plan"
             },
             {
               "id": "week-01",
@@ -72,10 +73,11 @@
               ],
               "status": "ready",
               "date": "2026-10-09",
-              "script": "week3/index.html#linear-0",
+              "script": "week3/index.html#linear-det-plan",
               "reference": "week3/teacher-guide.html",
-              "durationMinutes": 50,
-              "teachingMode": "boardwork-and-understanding-checks"
+              "durationMinutes": 60,
+              "teachingMode": "explain-write-board-check",
+              "timingPlan": "week3/index.html#linear-det-plan"
             },
             {
               "id": "week-01",
