@@ -26,7 +26,8 @@
               "date": "2026-10-08",
               "script": "week3/index.html#pure-0",
               "reference": "week3/teacher-guide.html",
-              "durationMinutes": 50
+              "durationMinutes": 50,
+              "teachingMode": "boardwork-and-understanding-checks"
             },
             {
               "id": "week-01",
@@ -73,7 +74,8 @@
               "date": "2026-10-09",
               "script": "week3/index.html#linear-0",
               "reference": "week3/teacher-guide.html",
-              "durationMinutes": 50
+              "durationMinutes": 50,
+              "teachingMode": "boardwork-and-understanding-checks"
             },
             {
               "id": "week-01",
